@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Facebook Comment plugin Meta -->
+  <meta property="fb:app_id" content="2099597870257585" />
+  <meta property="og:url" content="URL" />
+  <meta property="og:title" content="TITLE" />
+  <meta property="og:description" content="DESC" />
+  <meta property="og:image" content="IMG" />
+  <!-- Mobile Specific Metas
+      ================================================== -->
+  <title>Home - Travel, Photography, Blogging</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <!-- Body inner start -->
+  <div class="body-inner">
+    <!--/ Topbar start -->
+    <div id="top-bar" class="top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="top-bar-inner">
+              <ul class="top-menu title-font unstyled">
+                <li><a href="/about-us" )">About Us</a></li>
+                <li><a href="/advertise">Advertise</a></li>
+              </ul>
+
+              <div class="top-search">
+                <button class="fa fa-search"></button>
+              </div>
+              <div class="site-search">
+                <div class="container">
+                  <input type="text" placeholder="type what you want and enter">
+                  <span class="close">&times;</span>
+                </div>
+              </div><!-- Search end -->
+            </div><!-- top bar inner end -->
+          </div><!-- Col end -->
+        </div><!--/ Content row end -->
+      </div><!--/ Container end -->
+    </div>
+    <!--/ Topbar end -->
+    <!-- Header start -->
+    <header id="header" class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-xs-12">
+            <ul class="top-social unstyled">
+              <li>
+                <a title="Facebook" href="#">
+                  <span class="social-icon"><i class="fa fa-facebook"></i></span>
+                </a>
+                <a title="Twitter" href="#">
+                  <span class="social-icon"><i class="fa fa-twitter"></i></span>
+                </a>
+                <a title="Google+" href="#">
+                  <span class="social-icon"><i class="fa fa-google-plus"></i></span>
+                </a>
+                <!--<a title="behance" href="#">
+                  <span class="social-icon"><i class="fa fa-instagram"></i></span>
+                </a>-->
+              </li>
+            </ul>
+          </div><!--Social col end -->
+
+          <div class="col-md-4 col-xs-12">
+            <div class="logo text-center">
+              <a href="/">
+                <img src="assets/Images/logo.png" alt="">
+              </a>
+            </div>
+          </div><!-- Logo col end -->
+
+          <div class="col-md-4 col-xs-12">
+            <div class="top-ad">
+              <a href="/advertise"><img src="assets/Images/Ad/top-ad.png" alt=""></a>
+            </div>
+          </div><!-- Ad col end -->
+
+        </div><!-- Content row end -->
+      </div><!-- Container end -->
+    </header>
+    <!--/ Header end -->
+    <navigation></navigation>
+    <app-root></app-root>
+    <!-- Instagram start -->
+    <section class="no-padding" ng-controller="SocialConnectController">
+      <div class="container-fluid">
+        <h2 class="title-classic text-center">Instagram</h2>
+
+        <data-owl-carousel id="first" class="owl-carousel owl-theme instagram-carousel" data-options="{navigation: false, pagination: false, rewindNav: false, animateOut: 'fadeOut'}">
+          <div owl-carousel-item="" ng-repeat="media in instagramMedia" class="item clearfix">
+            <a href="{{media.Link}}" target="_blank"><img ng-src="{{media.Images.Standard_Resolution.Url}}" alt="img" style="display:block; object-fit: cover; vertical-align:middle"></a>
+          </div>
+        </data-owl-carousel>
+        @*<div id="instagram-carousel" class="owl-carousel owl-theme instagram-carousel">
+          @*<div class="item clearfix">
+            <a href="{{instagramMedia[0].Link}}"><img ng-src="{{instagramMedia[0].Images.Standard_Resolution.Url}}" alt="img"></a>
+          </div>
+          <div class="item clearfix">
+            <a href="{{instagramMedia[1].Link}}"><img ng-src="{{instagramMedia[1].Images.Standard_Resolution.Url}}" alt="img"></a>
+          </div>
+          <div class="item clearfix">
+            <a href="{{instagramMedia[2].Link}}"><img ng-src="{{instagramMedia[2].Images.Standard_Resolution.Url}}" alt="img"></a>
+          </div>
+          <div class="item clearfix">
+            <a href="{{instagramMedia[3].Link}}"><img ng-src="{{instagramMedia[3].Images.Standard_Resolution.Url}}" alt="img"></a>
+          </div>
+          <div class="item clearfix">
+            <a href="{{instagramMedia[4].Link}}"><img ng-src="{{instagramMedia[4].Images.Standard_Resolution.Url}}" alt="img"></a>
+          </div>
+          <div class="item clearfix">
+            <a href="{{instagramMedia[5].Link}}"><img ng-src="{{instagramMedia[5].Images.Standard_Resolution.Url}}" alt="img"></a>
+          </div>
+          <div class="item clearfix">
+            <a href="#"><img src="assets/Images/Instagram/instagram2.jpg" alt="img"></a>
+          </div>
+        </div>*@<!-- Carousel end -->
+
+      </div><!-- Container end -->
+    </section>
+    <!-- Instagram end -->
+    <!-- Footer start -->
+    <footer id="footer" class="footer">
+      <div class="container">
+
+        <div class="newsletter text-center">
+          <h3 class="title-normal">Subscribe To Our Newsletter</h3>
+          <form action="#" method="post" id="newsletter-form" class="newsletter-form">
+            <div class="form-group">
+              <input type="email" name="email" id="newsletter-form-email" class="form-control form-control-lg" placeholder="Your Email Here" autocomplete="off">
+              <button class="btn btn-primary">Subscribe</button>
+            </div>
+          </form>
+        </div><!-- Newsletter end -->
+
+        <div class="footer-social text-center">
+          <a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+          <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+          <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
+        </div><!-- Footer social end -->
+
+        <ul class="footer-menu title-font">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/advertise">Advertise</a></li>
+        </ul><!-- Footer menu end -->
+
+        <div class="copyright-info">
+          <p>Copyright &copy; <span id="copyright"></span> - Travel, Photography, Blogging.&nbsp; All Rights Reserved.</p>
+        </div><!-- Copyright end -->
+
+      </div><!-- Container end -->
+    </footer>
+    <script>
+      var thisYear = new Date().getFullYear();
+      document.getElementById("copyright").innerText = thisYear;
+    </script>
+    <!-- Footer end -->
+  </div>
+  <!-- Body inner end -->
+</body>
+</html>

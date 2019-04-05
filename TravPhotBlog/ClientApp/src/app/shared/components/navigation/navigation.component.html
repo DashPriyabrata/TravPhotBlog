@@ -1,0 +1,46 @@
+<!--/ Navigation start -->
+<nav class="site-navigation navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="site-nav-inner">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <div class="navbar-collapse collapse navbar-responsive-collapse">
+
+            <ul class="nav navbar-nav">
+              <li [ngClass]="{active: isActive('')}">
+                <a href="/">Home</a>
+              </li>
+              <li [ngClass]="{active: isActive('/travel')}">
+                <a href="/category/travel">Travel</a>
+              </li>
+              <li [ngClass]="{active: isActive('/biking')}">
+                <a href="/category/biking">Biking</a>
+              </li>
+              <li [ngClass]="{active: isActive('/photos')}">
+                <a href="/category/photos">Photos</a>
+              </li>
+              <li [ngClass]="{active: isActive('/about-me')}">
+                <a href="/about-me">About Me</a>
+              </li>
+              <li [ngClass]="{active: isActive('/contact')}">
+                <a href="/contact">Contact</a>
+              </li>
+
+            </ul><!--/ Nav ul end -->
+
+          </div><!--/ Collapse end -->
+        </div>
+      </div><!--/ Cold end -->
+    </div><!--/ Row end -->
+  </div><!--/ Container end -->
+</nav>
+<!--/ Navigation end -->
+
+<router-outlet></router-outlet>
