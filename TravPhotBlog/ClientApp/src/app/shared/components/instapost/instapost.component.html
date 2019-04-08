@@ -2,19 +2,15 @@
 <section class="no-padding">
   <div class="container-fluid">
     <h2 class="title-classic text-center">Instagram</h2>
-    <owl-carousel-o [options]="customOptions">
-
+    <owl-carousel-o id="first" [options]="customOptions" class="instagram-carousel">
       <ng-container *ngFor="let post of instaPosts">
-        <ng-template carouselSlide [id]="post.Id">
+        <ng-template carouselSlide [id]="post.Id" [width]="(post.Standard_Resolution.Width)/1.5">
           <a [href]="post.Link" target="_blank">
-            <img [src]="post.Standard_Resolution.Url" alt="" style="display:block; object-fit: cover; vertical-align:middle">
+            <img [src]="post.Standard_Resolution.Url" [alt]="(post.Location != null) ? post.Location.Name : ''" style="display:block; object-fit: cover; height: 300px;">
           </a>
         </ng-template>
       </ng-container>
-
-
     </owl-carousel-o><!-- Carousel end -->
-
   </div><!-- Container end -->
 </section>
 <!-- Instagram end -->

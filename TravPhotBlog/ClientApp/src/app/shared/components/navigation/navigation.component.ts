@@ -12,7 +12,6 @@ export class NavigationComponent {
   constructor(location: Location) { this.location = location }
 
   isActive(viewLocation: string) {
-    console.log(this.location.path());
     return this.location.path().endsWith(viewLocation);
   }
 }

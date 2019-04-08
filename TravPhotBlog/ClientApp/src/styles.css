@@ -2428,7 +2428,7 @@ article.list-post-left .list-post-inwrap {
   margin-bottom: -1px;
 }
 
-  .instagram-carousel .item a img {
+  .instagram-carousel .owl-item a img {
     -webkit-transition: 350ms;
     -moz-transition: 350ms;
     -o-transition: 350ms;
@@ -2440,7 +2440,7 @@ article.list-post-left .list-post-inwrap {
     filter: grayscale(0%);
   }
 
-  .instagram-carousel .item a:hover img {
+  .instagram-carousel .owl-item a:hover img {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);

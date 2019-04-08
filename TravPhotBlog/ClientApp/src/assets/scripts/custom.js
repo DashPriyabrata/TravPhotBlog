@@ -62,175 +62,175 @@ jQuery(function($) {
 
   //Box slider
 
-   $(".box-slider").owlCarousel({
+   //$(".box-slider").owlCarousel({
 
-      loop:true,
-      margin:20,
-      autoPlay:false,
-      animateOut: 'fadeOut',
-      nav:true,
-      mouseDrag:true,
-      touchDrag:true,
-      pagination:false,
-      navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-      slideSpeed:800,
-      items : 3,
-      responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-         }
-      }
+   //   loop:true,
+   //   margin:20,
+   //   autoPlay:false,
+   //   animateOut: 'fadeOut',
+   //   nav:true,
+   //   mouseDrag:true,
+   //   touchDrag:true,
+   //   pagination:false,
+   //   navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+   //   slideSpeed:800,
+   //   items : 3,
+   //   responsive:{
+   //     0:{
+   //         items:1
+   //     },
+   //     600:{
+   //         items:1
+   //     },
+   //     1000:{
+   //         items:1
+   //      }
+   //   }
 
-   });
+   //});
 
    //Slider merger
 
-   $(".owl-merge").owlCarousel({
+   //$(".owl-merge").owlCarousel({
 
-      merge:true,
-      loop:true,
-      margin:5,
-      autoPlay:false,
-      animateOut: 'fadeOut',
-      lazyLoad:true,
-      center:true,
-      nav:true,
-      mouseDrag:true,
-      touchDrag:true,
-      pagination:false,
-      navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-      slideSpeed:800,
-      items : 4,
-      responsive:{
-        0:{
-            items:2
-        },
-        600:{
-            items:4
-        }
-      }
+   //   merge:true,
+   //   loop:true,
+   //   margin:5,
+   //   autoPlay:false,
+   //   animateOut: 'fadeOut',
+   //   lazyLoad:true,
+   //   center:true,
+   //   nav:true,
+   //   mouseDrag:true,
+   //   touchDrag:true,
+   //   pagination:false,
+   //   navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+   //   slideSpeed:800,
+   //   items : 4,
+   //   responsive:{
+   //     0:{
+   //         items:2
+   //     },
+   //     600:{
+   //         items:4
+   //     }
+   //   }
 
-   });
-
-   //Trending slider
-
-   $(".column-slider").owlCarousel({
-
-      loop:true,
-      autoplay:true,
-      animateOut: 'fadeOut',
-      nav:true,
-      mouseDrag:true,
-      touchDrag:true,
-      pagination:false,
-      navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-      slideSpeed:1000,
-      items : 3,
-      responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:2
-         }
-      }
-
-   });
+   //});
 
    //Trending slider
 
-   $(".trending-slider").owlCarousel({
+   //$(".column-slider").owlCarousel({
 
-      loop:false,
-      margin:20,
-      autoplay:false,
-      animateOut: 'fadeOut',
-      nav:true,
-      mouseDrag:true,
-      touchDrag:true,
-      pagination:false,
-      navText: ["<i class='fa fa-caret-left'></i>", "<i class='fa fa-caret-right'></i>"],
-      slideSpeed:800,
-      items : 3,
-      responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:3
-         }
-      }
+   //   loop:true,
+   //   autoplay:true,
+   //   animateOut: 'fadeOut',
+   //   nav:true,
+   //   mouseDrag:true,
+   //   touchDrag:true,
+   //   pagination:false,
+   //   navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+   //   slideSpeed:1000,
+   //   items : 3,
+   //   responsive:{
+   //     0:{
+   //         items:1
+   //     },
+   //     600:{
+   //         items:2
+   //     },
+   //     1000:{
+   //         items:2
+   //      }
+   //   }
 
-   });
+   //});
+
+   //Trending slider
+
+   //$(".trending-slider").owlCarousel({
+
+   //   loop:false,
+   //   margin:20,
+   //   autoplay:false,
+   //   animateOut: 'fadeOut',
+   //   nav:true,
+   //   mouseDrag:true,
+   //   touchDrag:true,
+   //   pagination:false,
+   //   navText: ["<i class='fa fa-caret-left'></i>", "<i class='fa fa-caret-right'></i>"],
+   //   slideSpeed:800,
+   //   items : 3,
+   //   responsive:{
+   //     0:{
+   //         items:1
+   //     },
+   //     600:{
+   //         items:2
+   //     },
+   //     1000:{
+   //         items:3
+   //      }
+   //   }
+
+   //});
 
 
 
    //Trending slider
 
-   $(".featured-slider").owlCarousel({
+   //$(".featured-slider").owlCarousel({
 
-      loop:false,
-      margin:20,
-      autoplay:false,
-      animateOut: 'fadeOut',
-      nav:false,
-      pagination:false,
-      mouseDrag:true,
-      touchDrag:true,
-      slideSpeed:800,
-      items : 3,
-      responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:3
-         }
-      }
+   //   loop:false,
+   //   margin:20,
+   //   autoplay:false,
+   //   animateOut: 'fadeOut',
+   //   nav:false,
+   //   pagination:false,
+   //   mouseDrag:true,
+   //   touchDrag:true,
+   //   slideSpeed:800,
+   //   items : 3,
+   //   responsive:{
+   //     0:{
+   //         items:1
+   //     },
+   //     600:{
+   //         items:2
+   //     },
+   //     1000:{
+   //         items:3
+   //      }
+   //   }
 
-   });
+   //});
 
    
 
    //Instagram carousel
 
-   $("#instagram-carousel").owlCarousel({
+   //$("#instagram-carousel").owlCarousel({
 
-      loop:true,
-      animateOut: 'fadeOut',
-      nav:false,
-      dots:false,
-      mouseDrag:true,
-      touchDrag:true,
-      nav:false,
-      responsive:{
-           0:{
-               items:1
-           },
-           600:{
-               items:3
-           },
-           1000:{
-               items:6
-            }
-      }
+   //   loop:true,
+   //   animateOut: 'fadeOut',
+   //   nav:false,
+   //   dots:false,
+   //   mouseDrag:true,
+   //   touchDrag:true,
+   //   nav:false,
+   //   responsive:{
+   //        0:{
+   //            items:1
+   //        },
+   //        600:{
+   //            items:3
+   //        },
+   //        1000:{
+   //            items:6
+   //         }
+   //   }
 
-   });
+   //});
 
 
 

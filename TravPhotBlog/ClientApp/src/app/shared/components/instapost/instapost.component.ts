@@ -11,13 +11,19 @@ import { InstaPost } from '../../models/instapost';
 export class InstaPostComponent implements OnInit {
   instaPosts: InstaPost[];
   customOptions: any = {
+    autoWidth: true,
     loop: true,
+    margin: 2,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true,
+    autoplaySpeed: 4000,
+    dotsSpeed: 500,
+    dots: true,
     mouseDrag: true,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
+    touchDrag: true,
+    center: true,
+    animateOut: 'fadeOut',
     responsive: {
       0: {
         items: 1
@@ -29,7 +35,7 @@ export class InstaPostComponent implements OnInit {
         items: 6
       }
     },
-    nav: true
+    nav: false,
   }
 
   constructor(private socialService: SocialService) { }
