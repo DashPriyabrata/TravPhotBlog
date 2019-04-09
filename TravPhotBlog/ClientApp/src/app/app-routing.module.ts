@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './about/about.module#AboutModule'
   },
   {
+    path: 'advertise',
+    loadChildren: './advertise/advertise.module#AdvertiseModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
