@@ -32,16 +32,16 @@ jQuery(function($) {
   
 
   /* ----------------------------------------------------------- */
-   /*  Fixed header
-   /* ----------------------------------------------------------- */
+  /*  Fixed header
+  /* ----------------------------------------------------------- */
 
-      $(window).on('scroll', function(){
-          if ( $(window).scrollTop() > 120 ) {
-            $('.site-navigation').addClass('navbar-fixed');
-          } else {
-            $('.site-navigation').removeClass('navbar-fixed');
-          }
-      });
+$(window).on('scroll', function(){
+    if ( $(window).scrollTop() > 120 ) {
+      $('.site-navigation').addClass('navbar-fixed');
+    } else {
+      $('.site-navigation').removeClass('navbar-fixed');
+    }
+});
 
 
 

@@ -22,7 +22,6 @@ export class InstaPostComponent implements OnInit {
     dots: true,
     mouseDrag: true,
     touchDrag: true,
-    center: true,
     animateOut: 'fadeOut',
     responsive: {
       0: {
