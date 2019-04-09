@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SocialService } from '../../services/social.service';
+import { SocialService } from '../../../core/services/social.service';
 
 import { InstaPost } from '../../models/instapost';
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Constants } from '../../configs/constants';
-import { InstaPost } from '../models/instapost';
+import { InstaPost } from '../../shared/models/instapost';
 import { map } from 'rxjs/operators';
 
 @Injectable({
