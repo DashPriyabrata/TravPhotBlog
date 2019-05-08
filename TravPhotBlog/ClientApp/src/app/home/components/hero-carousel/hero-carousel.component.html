@@ -1,29 +1,35 @@
+
 <!--/ Carousel start -->
 <div id="main-slide" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators visible-lg visible-md">
-    <li ng-repeat="post in featuredPosts" data-target="#main-slide" data-slide-to="{{$index}}" ng-class="{'active' : $first}"></li>
+    <li *ngFor="let post of featuredPosts;  index as i; first as isFirst" data-target="#main-slide" attr.data-slide-to="{{i}}" [ngClass]="{'active' : isFirst}"></li>
   </ol><!--/ Indicators end-->
   <!-- Carousel inner -->
   <div class="carousel-inner">
-    <div ng-repeat="post in featuredPosts" ng-class="($index == 0) ? 'item active' : 'item'" style="background-image:url(Images/Post/{{post.TitleImage.split('.')[0]}}-RP.{{post.TitleImage.split('.')[1]}})">
+    <div *ngFor="let post of featuredPosts; index as i" [ngClass]="(i == 0) ? 'carousel-item active' : 'carousel-item'" [style.background-image]="'url(assets/Images/Post/' + post.TitleImage.split('.')[0] + '-RP.' + post.TitleImage.split('.')[1] + ')'">
+      <!--<img src="assets/Images/Post/{{post.TitleImage.split('.')[0]}}-RP.{{post.TitleImage.split('.')[1]}}" />-->
       <div class="slider-content">
         <div class="post-cat title-font">
-          <a href="#">{{post.Category}}</a>
+          <a href="/{{post.Category}}">{{post.Category}}</a>
         </div>
         <h2 class="entry-title">
           <a>{{post.Title}}</a>
         </h2>
-        <p><a href="@Url.Action(" Index", "Post" )/{{post.NavUrlString}}/{{post.BlogId}}" class="title-font slider btn btn-primary">Full Story</a></p>
+        <p><a href="" class="title-font slider btn btn-primary">Full Story</a></p>
       </div>
     </div><!--/ Carousel item end -->
   </div><!-- Carousel inner end-->
   <!-- Controllers -->
-  <a class="left carousel-control" href="#main-slide" data-slide="prev">
-    <span><i class="fa fa-angle-left"></i></span>
+  <a class="left carousel-control-prev" href="#main-slide" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+    <!--<span><i class="fa fa-angle-left"></i></span>-->
   </a>
-  <a class="right carousel-control" href="#main-slide" data-slide="next">
-    <span><i class="fa fa-angle-right"></i></span>
+  <a class="right carousel-control-next" href="#main-slide" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+    <!--<span><i class="fa fa-angle-right"></i></span>-->
   </a>
 
 </div>
