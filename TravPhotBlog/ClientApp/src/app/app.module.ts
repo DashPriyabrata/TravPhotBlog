@@ -3,10 +3,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './shared/components/navigation/navigation.component';
+//import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { NgxPopper } from 'angular-popper';
 import { InstaPostComponent } from './shared/components/instapost/instapost.component';
 import { SafePipe } from './shared/safe.pipe';
@@ -14,7 +15,7 @@ import { SafePipe } from './shared/safe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
+    //NavigationComponent,
     InstaPostComponent,
     SafePipe
   ],
@@ -24,9 +25,10 @@ import { SafePipe } from './shared/safe.pipe';
     HttpClientModule,
     CarouselModule,
     AppRoutingModule,
+    CommonModule,
     NgxPopper
   ],
   providers: [],
-  bootstrap: [AppComponent, NavigationComponent, InstaPostComponent]
+  bootstrap: [AppComponent, InstaPostComponent]
 })
 export class AppModule { }

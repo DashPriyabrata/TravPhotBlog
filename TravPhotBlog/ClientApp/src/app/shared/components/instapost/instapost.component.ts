@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialService } from '../../../core/services/social.service';
-
 import { InstaPost } from '../../models/instapost';
 
 @Component({
@@ -14,7 +13,7 @@ export class InstaPostComponent implements OnInit {
     autoWidth: true,
     loop: true,
     margin: 2,
-    autoplay: true,
+    autoplay: false,
     autoplayTimeout: 5000,
     autoplayHoverPause: true,
     autoplaySpeed: 4000,
