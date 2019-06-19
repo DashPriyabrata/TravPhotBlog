@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 //import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { NgxPopper } from 'angular-popper';
 import { InstaPostComponent } from './shared/components/instapost/instapost.component';
-import { SafePipe } from './shared/safe.pipe';
+import { SafePipe } from './shared/pipes/safe.pipe';
 
 @NgModule({
   declarations: [

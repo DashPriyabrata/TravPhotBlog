@@ -1,22 +1,71 @@
-export class InstaPost {
-  constructor(
-    public Id: number,
-    public Standard_Resolution: ImageDetails,
-    public Likes: number,
-    public Link: string,
-    public Location: Location
-  ) { }
+export interface InstaModel {
+  Pagination: any;
+  Data: InstaPost[];
+  Meta: Meta;
 }
 
-class ImageDetails {
+interface Meta {
+  Error_Type: string;
+  Code: number;
+  Error_Message: string;
+}
+
+export interface InstaPost {
+  Id: string;
+  User: User;
+  Images: Images;
+  Created_Time: string;
+  Caption: Caption;
+  User_Has_Liked: boolean;
+  Likes: Likes;
+  Tags: string[];
+  Filter: string;
+  Type: string;
+  Link: string;
+  Location?: Location;
+  Attribution?: any;
+  //constructor(
+  //  public Id: number,
+  //  public Standard_Resolution: ImageDetails,
+  //  public Likes: number,
+  //  public Link: string,
+  //  public Location: Location
+  //) { }
+}
+
+interface ImageDetails {
   Width: number;
   Height: number;
   Url: string;
 }
 
-class Location {
+interface Location {
   Latitude: number;
   Longitude: number;
   Name: string;
   Id: number;
+}
+
+interface User {
+  Id: string;
+  Full_Name: string;
+  Profile_Picture: string;
+  Username: string;
+}
+
+interface Images {
+  Thumbnail: ImageDetails;
+  Low_Resolution: ImageDetails;
+  Standard_Resolution: ImageDetails;
+}
+
+interface Caption {
+  Id: string;
+  Text: string;
+  Created_Time: string;
+  From: User;
+}
+
+interface Likes {
+  Count: number;
 }

@@ -13,7 +13,7 @@ export class InstaPostComponent implements OnInit {
     autoWidth: true,
     loop: true,
     margin: 2,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 5000,
     autoplayHoverPause: true,
     autoplaySpeed: 4000,
@@ -40,7 +40,7 @@ export class InstaPostComponent implements OnInit {
 
   ngOnInit() {
     this.socialService.getInstagramRecentMedia().subscribe((res) => {
-      this.instaPosts = res;
+      this.instaPosts = res.Data;
     });
   }
 }
