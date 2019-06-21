@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from '../home/home.component';
 import { HeroCarouselComponent } from './components/hero-carousel/hero-carousel.component';
+import { FeaturedPostsComponent } from './components/featured-posts/featured-posts.component';
 
 @NgModule({
-  declarations: [HomeComponent, HeroCarouselComponent],
+  declarations: [HomeComponent, HeroCarouselComponent, FeaturedPostsComponent],
   imports: [
     CommonModule,
     HomeRoutingModule

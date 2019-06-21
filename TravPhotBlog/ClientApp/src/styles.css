@@ -915,7 +915,7 @@ header.sayit_coming_soon_header .sayit_image_logo {
 
 header.sayit_sticky_menu .sayit_image_logo,
 html.sayit_page_mode_fullscreen header .sayit_image_logo.sayit_retina {
-  background: url("../src/assets/imgs/logo.png") no-repeat center;
+  background: url("/assets/imgs/logo.png") no-repeat center;
   background-size: 148px 72px;
 }
 
@@ -927,7 +927,7 @@ html.sayit_page_mode_fullscreen header .sayit_image_logo.sayit_retina {
 
 @media only screen and (max-width: 737px) {
   html.sayit_page_mode_fullscreen header .sayit_image_logo.sayit_retina {
-    background: url("../src/assets/imgs/logo-white.png") no-repeat center;
+    background: url("/assets/imgs/logo-white.png") no-repeat center;
     background-size: 74px 36px;
   }
 }
