@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'advertise',
     loadChildren: () => import('./advertise/advertise.module').then(m => m.AdvertiseModule)
+  },
+  {
+    path: 'post',
+    loadChildren: () => import('./post/post.module').then(m => m.PostModule)
   }
 ];
 
