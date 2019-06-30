@@ -16,7 +16,6 @@ export class RecentPostsComponent implements OnInit {
   ngOnInit() {
     this.precisePostsService.getPrecisePosts(0, 6).subscribe((res) => {
       this.recentPosts = res;
-      debugger;
     });
   }
 }

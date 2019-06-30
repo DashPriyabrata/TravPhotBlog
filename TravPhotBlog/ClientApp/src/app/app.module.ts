@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { NgxPopper } from 'angular-popper';
 import { InstaPostComponent } from './shared/components/instapost/instapost.component';
 import { SafePipe } from './shared/pipes/safe.pipe';
+import { HomeModule } from './home/home.module';
+import { PostModule } from './post/post.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { SafePipe } from './shared/pipes/safe.pipe';
     CarouselModule,
     AppRoutingModule,
     CommonModule,
-    NgxPopper
+    NgxPopper,
+    HomeModule,
+    PostModule
   ],
   providers: [],
   bootstrap: [AppComponent, InstaPostComponent]
