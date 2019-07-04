@@ -6,7 +6,7 @@
         <div class="sayit_post_slider_wrapper" id="sayit_post_slider_123344" data-autoplay="off" data-pause="yes" data-speed="8000" data-default-height="800">
           <!-- Item 1 -->
           <div class="sayit_post_slider_item item_1" data-number="1">
-            <div class="sayit_slider_item_wrapper sayit_js_bg_image" data-src="assets/imgs/clipart/post_slider/img-1.jpg">
+            <div class="sayit_slider_item_wrapper" [attr.data-src]="featuredPosts[0].TitleImage">
               <div class="sayit_overlay"></div>
 
               <div class="sayit_post_meta_cont">
@@ -26,7 +26,7 @@
 
           <!-- Item 2 -->
           <div class="sayit_post_slider_item item_2" data-number="2">
-            <div class="sayit_slider_item_wrapper sayit_js_bg_image" data-src="assets/imgs/clipart/post_slider/img-2.jpg">
+            <div class="sayit_slider_item_wrapper" [attr.data-src]="featuredPosts[1].TitleImage">
               <div class="sayit_overlay"></div>
 
               <div class="sayit_post_meta_cont">
@@ -46,7 +46,7 @@
 
           <!-- Item 3 -->
           <div class="sayit_post_slider_item item_3" data-number="3">
-            <div class="sayit_slider_item_wrapper sayit_js_bg_image" data-src="assets/imgs/clipart/post_slider/img-3.jpg">
+            <div class="sayit_slider_item_wrapper" [attr.data-src]="featuredPosts[2].TitleImage">
               <div class="sayit_overlay"></div>
 
               <div class="sayit_post_meta_cont">
