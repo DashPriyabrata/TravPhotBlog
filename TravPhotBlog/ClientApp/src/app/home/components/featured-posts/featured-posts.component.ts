@@ -15,6 +15,10 @@ export class FeaturedPostsComponent implements OnInit {
   ngOnInit() {
     this.featuredPostsService.getFeaturedPosts().subscribe((res) => {
       this.featuredPosts = res;
+      this.featuredPosts.forEach(obj => {
+        var spiltImg = obj.TitleImage.split("upload/");
+        obj.TitleImage = spiltImg[0] + "upload/c_fill,h_634,w_780/" + spiltImg[1];
+      });
     });
   }
 

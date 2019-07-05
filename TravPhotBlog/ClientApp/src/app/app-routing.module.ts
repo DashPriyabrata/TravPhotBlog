@@ -7,7 +7,7 @@ import { PostComponent } from './post/post.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
-  { path: 'post', component: PostComponent }
+  { path: 'post/:navUrl/:blogId', component: PostComponent }
   //{
   //  path: '',
   //  redirectTo: '/home',
