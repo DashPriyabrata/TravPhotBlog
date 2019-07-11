@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpParams } from "@angular/common/http";
 import { Constants } from '../../configs/constants';
 
 import { BlogPost } from '../models/blog-post';
@@ -16,7 +15,6 @@ export class BlogInfoService {
   constructor(private httpClient: HttpClient) { }
 
   public getBlogInfo(blogId: string) {
-    const params = new HttpParams().set('blogId', blogId);
-    return this.httpClient.get<BlogPost>(this.blogInfoApiURL, { params });
+    return this.httpClient.get<BlogPost>(this.blogInfoApiURL + "/" + blogId);
   }
 }

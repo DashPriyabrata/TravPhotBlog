@@ -1,15 +1,15 @@
 <!-- Title Block -->
-<div class="sayit_title_container row sayit_js_height sayit_js_bg_image sayit_block_with_fimage" data-src="assets/imgs/clipart/standard_post/back-1.jpg" data-height="600">
+<div class="sayit_title_container row sayit_js_height sayit_block_with_fimage" [attr.data-src]="blogData.TitleImage" data-height="600">
   <div class="sayit_overlay sayit_fimage_overlay_type_light"></div>
 
   <div class="sayit_title_wrapper col push-middle">
     <div class="sayit_post_category_cont">
-      <a href="#">Germany</a>
+      <a href="#">{{blogData.Country}}</a>
       /
-      <span class="sayit_post_date">July 10, 2018</span>
+      <span class="sayit_post_date">{{blogData.PostDate | date: longDate}}</span>
     </div>
 
-    <h1 class="sayit_post_title">Mauris Feugiat Arcu Dolor Praesent</h1>
+    <h1 class="sayit_post_title">{{blogData.Title}}</h1>
   </div>
 </div>
 
