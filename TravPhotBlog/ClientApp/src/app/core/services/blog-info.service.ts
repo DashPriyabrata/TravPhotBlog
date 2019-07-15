@@ -11,7 +11,6 @@ export class BlogInfoService {
   //variable initialization
   blogInfoApiURL: string = Constants.API_ROOT_URL + '/BlogInfo';
 
-
   constructor(private httpClient: HttpClient) { }
 
   public getBlogInfo(blogId: string) {

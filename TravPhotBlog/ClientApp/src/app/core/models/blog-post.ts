@@ -9,7 +9,7 @@ export class BlogPost {
   public Country: string;
   public IsActive: boolean;
   public BloggerId: number;
-  public Category; string;
+  public Category: string;
   public IsFeatured: boolean;
   public IsCommentsEnabled: boolean;
   public Views: number;
