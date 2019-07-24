@@ -35,10 +35,7 @@
       <div class="row align-middle sayit_tags_and_socials_cont">
         <div class="sayit_post_tags col">
           <div>
-            <a href="#">Blog</a>
-            <a href="#">Germany</a>
-            <a href="#">Landscape</a>
-            <a href="#">Travel</a>
+            <a *ngFor="let tag of tags" href="#">{{tag.Tag}}</a>
           </div>
         </div>
       </div>
@@ -47,9 +44,14 @@
       <div class="sayit_single_divider"></div>
 
       <!-- Post Navigation Area -->
-      <div class="sayit_posts_navigation">
-        <span class="sayit_next_post_button sayit_post_nav_button">
-          <a href="post_image.html">Next Post</a>
+      <div class="sayit_posts_navigation" *ngIf="nextPost != null || prevPost != null">
+        <span class="sayit_prev_post_button sayit_post_nav_button" *ngIf="prevPost != null">
+          <i class="fa fa-arrow-left"></i>
+          <a href="/post/{{prevPost.NavUrlString}}/{{prevPost.BlogId}}">Previous Post</a>
+        </span>
+
+        <span class="sayit_next_post_button sayit_post_nav_button" *ngIf="nextPost != null">
+          <a href="/post/{{nextPost.NavUrlString}}/{{nextPost.BlogId}}">Next Post</a>
           <i class="fa fa-arrow-right"></i>
         </span>
       </div>
