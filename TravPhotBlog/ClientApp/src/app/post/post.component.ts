@@ -21,6 +21,7 @@ export class PostComponent implements OnInit, AfterViewInit {
   tags: BlogTag[];
   nextPost: BlogPost;
   prevPost: BlogPost;
+  relatedPosts: BlogPost[];
 
   constructor(private route: ActivatedRoute, private blogInfoService: BlogInfoService, private blogContentService: BlogContentService, private blogTagService: BlogTagService) {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -31,6 +32,7 @@ export class PostComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.blogInfoService.getBlogInfo(this.blogId).subscribe((res) => {
       this.blogData = res;
+      
       this.blogContentService.getPostContent(this.blogData.ContentId).subscribe((res) => {
         this.postContent = res;
       });
@@ -43,10 +45,12 @@ export class PostComponent implements OnInit, AfterViewInit {
       this.blogContentService.getNextPost(this.blogData.BlogId).subscribe((res) => {
         this.nextPost = res;
       });
+      this.blogContentService.getRelatedPosts(this.blogData.BlogTagId).subscribe((res) => {
+        this.relatedPosts = res;
+      });
     });
-
-    
   }
+
   ngAfterViewInit() {
     $(".sayit_title_container").each(function () {
       $(this).css('background-image', 'url(' + $(this).attr('data-src') + ')');

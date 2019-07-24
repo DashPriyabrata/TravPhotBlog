@@ -13,6 +13,7 @@ export class BlogContentService {
   postContentApiURL: string = Constants.API_ROOT_URL + '/BlogInfo/PostContent/';
   nextPostApiURL: string = Constants.API_ROOT_URL + '/BlogInfo/NextPost/';
   prevPostApiURL: string = Constants.API_ROOT_URL + '/BlogInfo/PrevPost/';
+  relatedPostApiURL: string = Constants.API_ROOT_URL + '/BlogInfo/RelatedPosts/';
   
   constructor(private httpClient: HttpClient) { }
 
@@ -24,5 +25,8 @@ export class BlogContentService {
   }
   public getPrevPost(blogId: number) {
     return this.httpClient.get<BlogPost>(this.prevPostApiURL + blogId);
+  }
+  public getRelatedPosts(blogTagId: number) {
+    return this.httpClient.get<BlogPost[]>(this.relatedPostApiURL + blogTagId);
   }
 }

@@ -1,3 +1,5 @@
+<link href="../../assets/styles/site.css" rel="stylesheet" />
+
 <!-- Title Block -->
 <div class="sayit_title_container row sayit_js_height sayit_block_with_fimage" [attr.data-src]="blogData.TitleImage" data-height="600">
   <div class="sayit_overlay sayit_fimage_overlay_type_light"></div>
@@ -61,73 +63,55 @@
       <div class="sayit_about_author">
         <div class="sayit_about_author_wrapper">
           <div class="sayit_author_ava">
-            <img src="assets/imgs/clipart/author.png" alt="" width="100" height="100">
+            <img src="assets/imgs/Blogger/Author_{{blogData.blogger.Photo}}" alt="{{blogData.blogger.FirstName}} {{blogData.blogger.LastName}}'s Photo" width="100" height="100">
           </div>
 
           <div class="sayit_author_cont">
             <h6>
-              <a href="#" title="Posts by Pixel-Mafia">Pixel-Mafia</a>
+              <a href="#" title="Posts by {{blogData.blogger.FirstName}} {{blogData.blogger.LastName}}">{{blogData.blogger.FirstName}}</a>
             </h6>
 
-            <p>All made possible by our flavor, innovation and, most importantly, by unlocking potential in our team members.  Instead of following trends, we set them.</p>
+            <p>{{blogData.blogger.Slogan}} - {{blogData.blogger.AboutMe}}.</p>
+          </div>
+
+          <div class="sayit_social_icons_widget">
+            <div class="sayit_widget_container">
+              <a class="blog_social_icon" href="{{blogData.blogger.Facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a class="blog_social_icon" href="{{blogData.blogger.Twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a class="blog_social_icon" href="{{blogData.blogger.Instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
+            </div>
           </div>
         </div>
+
       </div>
 
       <div class="sayit_single_divider"></div>
 
-      <!-- Recent Posts -->
+      <!-- Related Posts -->
       <h5 class="sayit_featured_posts_heading">You may also like</h5>
 
-      <div class="sayit_featured_posts sayit_items_2">
+      <div class="sayit_featured_posts sayit_items_2" style="margin-bottom: 40px;">
         <!-- Item 1 -->
-        <div class="sayit_posts_item">
+        <div class="sayit_posts_item" style="width:33.3%;" *ngFor="let post of relatedPosts | slice:0:3">
           <div class="sayit_fimage_cont">
-            <a href="post_quote.html">
-              <img src="assets/imgs/clipart/standard_post/img-3.jpg" alt="" />
+            <a href="/post/{{post.NavUrlString}}/{{post.BlogId}}">
+              <img src="{{post.TitleImage}}" alt="{{post.City}}, {{post.Country}}" />
             </a>
           </div>
 
           <div class="sayit_meta_cont">
             <div class="sayit_post_category">
-              <a href="#">United Kingdom</a>
+              <a href="#">{{post.Country}}</a>
             </div>
-
-            <span>/</span>
-
-            <div class="sayit_post_date">July 11, 2018</div>
+            /
+            <div class="sayit_post_date">{{post.PostDate | date: longDate}}</div>
           </div>
 
           <h4 class="sayit_post_title">
-            <a href="post_quote.html">Vivamus Dignissim Dui</a>
+            <a href="/post/{{post.NavUrlString}}/{{post.BlogId}}">{{post.Title}}</a>
           </h4>
 
-          <div class="sayit_excerpt">Nunc mattis tellus sit amet tincidunt elementum. Sed cursus, ligula in scelerisque facilisis, metus mauris placerat...</div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="sayit_posts_item">
-          <div class="sayit_fimage_cont">
-            <a href="post_link.html">
-              <img src="assets/imgs/clipart/standard_post/img-4.jpg" alt="" />
-            </a>
-          </div>
-
-          <div class="sayit_meta_cont">
-            <div class="sayit_post_category">
-              <a href="#">Turkey</a>
-            </div>
-
-            <span>/</span>
-
-            <div class="sayit_post_date">July 11, 2018</div>
-          </div>
-
-          <h4 class="sayit_post_title">
-            <a href="post_link.html">Elementum Quam Porta</a>
-          </h4>
-
-          <div class="sayit_excerpt">Aenean pellentesque lectus quis erat lacinia gravida. Sed cursus vestibulum enim. Ut hendrerit pellentesque odio,...</div>
+          
         </div>
       </div>
 
