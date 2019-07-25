@@ -12,15 +12,16 @@
 
 <div class="row gutters">
   <!-- Info Box 1 -->
-  <div class="col col-4 sayit_pr_10 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40">
+  <div class="col col-4 sayit_pr_10 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40" *ngIf="recentPosts.length >= 1">
     <div class="sayit_info_box_widget">
       <div class="sayit_widget_container">
         <div class="sayit_info_box_item view_type_3">
-          <a href="places_usa.html">
-            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" data-src="../../../assets/imgs/clipart/info_box/info-1.jpg" data-tilt data-tilt-easing="linear" data-tilt-max="20">
+          <a href="post/{{recentPosts[0].NavUrlString}}/{{recentPosts[0].BlogId}}">
+            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" [attr.data-src]="recentPosts[0].TitleImage" data-tilt data-tilt-easing="linear" data-tilt-max="20">
               <div class="sayit_inbo_box_content sayit_no_description">
                 <div class="sayit_info_box_title sayit_text_align_center">
-                  <h3 class="sayit_js_color" data-color="#ffffff">United States of America</h3>
+                  <h4 class="sayit_js_color" data-color="#ffd700">{{recentPosts[0].City}}</h4>
+                  <h3 class="sayit_js_color" data-color="#ffffff">{{recentPosts[0].Country}}</h3>
                 </div>
               </div>
             </div>
@@ -31,15 +32,16 @@
   </div>
 
   <!-- Info Box 2 -->
-  <div class="col col-4 sayit_pr_5 sayit_pl_5 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40">
+  <div class="col col-4 sayit_pr_5 sayit_pl_5 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40" *ngIf="recentPosts.length >= 2">
     <div class="sayit_info_box_widget">
       <div class="sayit_widget_container">
         <div class="sayit_info_box_item view_type_3">
-          <a href="places_india.html">
-            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" data-src="../../../assets/imgs/clipart/info_box/info-2.jpg" data-tilt data-tilt-easing="linear" data-tilt-max="20">
+          <a href="post/{{recentPosts[1].NavUrlString}}/{{recentPosts[1].BlogId}}">
+            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" [attr.data-src]="recentPosts[1].TitleImage" data-tilt data-tilt-easing="linear" data-tilt-max="20">
               <div class="sayit_inbo_box_content sayit_no_description">
                 <div class="sayit_info_box_title sayit_text_align_center">
-                  <h3 class="sayit_js_color" data-color="#ffffff">India</h3>
+                  <h4 class="sayit_js_color" data-color="#ffd700">{{recentPosts[1].City}}</h4>
+                  <h3 class="sayit_js_color" data-color="#ffffff">{{recentPosts[1].Country}}</h3>
                 </div>
               </div>
             </div>
@@ -50,15 +52,16 @@
   </div>
 
   <!-- Info Box 3 -->
-  <div class="col col-4 sayit_pl_10 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40">
+  <div class="col col-4 sayit_pl_10 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40" *ngIf="recentPosts.length >= 3">
     <div class="sayit_info_box_widget">
       <div class="sayit_widget_container">
         <div class="sayit_info_box_item view_type_3">
-          <a href="places_germany.html">
-            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" data-src="../../../assets/imgs/clipart/info_box/info-3.jpg" data-tilt data-tilt-easing="linear" data-tilt-max="20">
+          <a href="post/{{recentPosts[2].NavUrlString}}/{{recentPosts[2].BlogId}}">
+            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" [attr.data-src]="recentPosts[2].TitleImage" data-tilt data-tilt-easing="linear" data-tilt-max="20">
               <div class="sayit_inbo_box_content sayit_no_description">
                 <div class="sayit_info_box_title sayit_text_align_center">
-                  <h3 class="sayit_js_color" data-color="#ffffff">Germany</h3>
+                  <h4 class="sayit_js_color" data-color="#ffd700">{{recentPosts[2].City}}</h4>
+                  <h3 class="sayit_js_color" data-color="#ffffff">{{recentPosts[2].Country}}</h3>
                 </div>
               </div>
             </div>
@@ -69,15 +72,16 @@
   </div>
 
   <!-- Info Box 4 -->
-  <div class="col col-4 sayit_pr_10 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40">
+  <div class="col col-4 sayit_pr_10 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40" *ngIf="recentPosts.length >= 4">
     <div class="sayit_info_box_widget">
       <div class="sayit_widget_container">
         <div class="sayit_info_box_item view_type_3">
-          <a href="places_turkey.html">
-            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" data-src="../../../assets/imgs/clipart/info_box/info-4.jpg" data-tilt data-tilt-easing="linear" data-tilt-max="20">
+          <a href="post/{{recentPosts[3].NavUrlString}}/{{recentPosts[3].BlogId}}">
+            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" [attr.data-src]="recentPosts[3].TitleImage" data-tilt data-tilt-easing="linear" data-tilt-max="20">
               <div class="sayit_inbo_box_content sayit_no_description">
                 <div class="sayit_info_box_title sayit_text_align_center">
-                  <h3 class="sayit_js_color" data-color="#ffffff">Turkey</h3>
+                  <h4 class="sayit_js_color" data-color="#ffd700">{{recentPosts[3].City}}</h4>
+                  <h3 class="sayit_js_color" data-color="#ffffff">{{recentPosts[3].Country}}</h3>
                 </div>
               </div>
             </div>
@@ -88,15 +92,16 @@
   </div>
 
   <!-- Info Box 5 -->
-  <div class="col col-4 sayit_pl_5 sayit_pr_5 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40">
+  <div class="col col-4 sayit_pl_5 sayit_pr_5 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40" *ngIf="recentPosts.length >= 5">
     <div class="sayit_info_box_widget">
       <div class="sayit_widget_container">
         <div class="sayit_info_box_item view_type_3">
-          <a href="places_uk.html">
-            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" data-src="../../../assets/imgs/clipart/info_box/info-5.jpg" data-tilt data-tilt-easing="linear" data-tilt-max="20">
+          <a href="post/{{recentPosts[4].NavUrlString}}/{{recentPosts[4].BlogId}}">
+            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" [attr.data-src]="recentPosts[4].TitleImage" data-tilt data-tilt-easing="linear" data-tilt-max="20">
               <div class="sayit_inbo_box_content sayit_no_description">
                 <div class="sayit_info_box_title sayit_text_align_center">
-                  <h3 class="sayit_js_color" data-color="#ffffff">United Kingdom</h3>
+                  <h4 class="sayit_js_color" data-color="#ffd700">{{recentPosts[4].City}}</h4>
+                  <h3 class="sayit_js_color" data-color="#ffffff">{{recentPosts[4].Country}}</h3>
                 </div>
               </div>
             </div>
@@ -107,15 +112,16 @@
   </div>
 
   <!-- Info Box 6 -->
-  <div class="col col-4 sayit_pl_10 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40">
+  <div class="col col-4 sayit_pl_10 sayit_mb_40 sayit_md_padding_0 sayit_md_mb_40" *ngIf="recentPosts.length >= 6">
     <div class="sayit_info_box_widget">
       <div class="sayit_widget_container">
         <div class="sayit_info_box_item view_type_3">
-          <a href="places_france.html">
-            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" data-src="../../../assets/imgs/clipart/info_box/info-6.jpg" data-tilt data-tilt-easing="linear" data-tilt-max="20">
+          <a href="post/{{recentPosts[5].NavUrlString}}/{{recentPosts[5].BlogId}}">
+            <div class="sayit_info_box_item_inner sayit_js_bg_image sayit_parallax_mode sayit_mobile_height_380" [attr.data-src]="recentPosts[5].TitleImage" data-tilt data-tilt-easing="linear" data-tilt-max="20">
               <div class="sayit_inbo_box_content sayit_no_description">
                 <div class="sayit_info_box_title sayit_text_align_center">
-                  <h3 class="sayit_js_color" data-color="#ffffff">France</h3>
+                  <h4 class="sayit_js_color" data-color="#ffd700">{{recentPosts[5].City}}</h4>
+                  <h3 class="sayit_js_color" data-color="#ffffff">{{recentPosts[5].Country}}</h3>
                 </div>
               </div>
             </div>
