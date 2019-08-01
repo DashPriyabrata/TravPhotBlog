@@ -1,20 +1,20 @@
 <!-- Comments Area -->
 <div class="sayit_comments_cont">
   <div class="sayit_comments_wrapper">
-    <h5 class="sayit_comments_title">Comments on This Post</h5>
+    <h5 class="sayit_comments_title">{{comments.length}} Comments on This Post</h5>
 
     <div class="sayit_comment_list">
-      <div class="comment even">
+      <div class="comment even" *ngFor="let comment of comments | parentId:0">
         <div class="sayit_comment_ava">
-          <img src="assets/imgs/clipart/ava-1.png" alt="" width="70" height="70" />
+          <img src="{{comment.Commenter.Avatar || 'assets/imgs/clipart/ava-1.png'}}" alt="" width="70" height="70" />
         </div>
 
         <div class="sayit_comment_body">
           <div class="sayit_comment_meta">
             <div class="sayit_comment_author_cont">
-              <h6 class="innertitle sayit_comment_author">Samantha Grenberg</h6>
+              <h6 class="innertitle sayit_comment_author">{{comment.Commenter.Name}}</h6>
 
-              <div class="sayit_comment_date">July 17, 2018</div>
+              <div class="sayit_comment_date">{{comment.Date | date: longDate}}</div>
             </div>
 
             <div class="sayit_comment_reply_cont">
@@ -29,21 +29,21 @@
           </div>
 
           <div class="sayit_comment_text">
-            <p>Nice blog and excellent travels.</p>
+            <p>{{comment.Comment}}</p>
           </div>
         </div>
 
-        <div class="comment odd">
+        <div class="comment odd" *ngFor="let reply of comments | parentId:comment.Id">
           <div class="sayit_comment_ava">
-            <img src="assets/imgs/clipart/author.png" alt="" width="70" height="70" />
+            <img src="{{reply.Commenter.Avatar || 'assets/imgs/clipart/ava-1.png'}}" alt="" width="70" height="70" />
           </div>
 
           <div class="sayit_comment_body">
             <div class="sayit_comment_meta">
               <div class="sayit_comment_author_cont">
-                <h6 class="innertitle sayit_comment_author">Pixel-Mafia</h6>
+                <h6 class="innertitle sayit_comment_author">{{reply.Commenter.Name}}</h6>
 
-                <div class="sayit_comment_date">July 17, 2018</div>
+                <div class="sayit_comment_date">{{reply.Date | date: longDate}}</div>
               </div>
 
               <div class="sayit_comment_reply_cont">
@@ -58,7 +58,7 @@
             </div>
 
             <div class="sayit_comment_text">
-              <p>Thanks for your kind words.</p>
+              <p>{{reply.Comment}}</p>
             </div>
           </div>
         </div>
@@ -72,6 +72,7 @@
         <textarea name="comment" cols="45" rows="5" placeholder="Join the Conversation" id="comment-message" class="form-field" form="comment_form"></textarea>
         <input placeholder="Enter Your Name *" name="author" type="text" value="" size="30">
         <input placeholder="Enter Your Email *" name="email" type="text" value="" size="30">
+        <input placeholder="Enter Your Website" name="website" type="text" value="" size="30">
         <p class="form-submit">
           <input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
         </p>
