@@ -68,13 +68,14 @@
     <div class="comment-respond" id="respond">
       <h5 class="sayit_reply_comment_title">Let us know your thoughts about this topic </h5>
 
-      <form name="comment_form" id="comment_form">
-        <textarea name="comment" cols="45" rows="5" placeholder="Join the Conversation" id="comment-message" class="form-field" form="comment_form"></textarea>
-        <input placeholder="Enter Your Name *" name="author" type="text" value="" size="30">
-        <input placeholder="Enter Your Email *" name="email" type="text" value="" size="30">
-        <input placeholder="Enter Your Website" name="website" type="text" value="" size="30">
+      <form name="comment_form" id="comment_form" [formGroup]="commentForm">
+        <textarea name="comment" cols="45" rows="5" placeholder="Join the Conversation" id="comment-message" class="form-field" form="comment_form" formControlName="comment"></textarea>
+        <input placeholder="Enter Your Name *" name="author" type="text" value="" size="30" formControlName="author">
+        <input placeholder="Enter Your Email *" name="email" type="text" value="" size="30" formControlName="email">
+        <input placeholder="Enter Your Website" name="website" type="text" value="" size="30" formControlName="website">
         <p class="form-submit">
-          <input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
+          <input name="submit" type="submit" id="submit" class="submit" value="Post Comment"
+                 (click) = "onFormSubmit(author.value, email.value, website.value, comment.value)">
         </p>
       </form>
     </div>

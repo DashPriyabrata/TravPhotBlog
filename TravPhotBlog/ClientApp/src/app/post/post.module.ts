@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //import { PostRoutingModule } from './post-routing.module';
 import { PostComponent } from './post.component';
@@ -9,7 +10,9 @@ import { ParentIdPipe } from '../shared/pipes/parent-id.pipe';
 @NgModule({
   declarations: [PostComponent, BlogCommentComponent, ParentIdPipe],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
     //PostRoutingModule
   ]
 })
