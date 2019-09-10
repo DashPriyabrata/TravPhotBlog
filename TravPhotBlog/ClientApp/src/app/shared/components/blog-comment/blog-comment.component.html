@@ -19,7 +19,7 @@
 
             <div class="sayit_comment_reply_cont">
               <div class="sayit_comment_reply">
-                <a href="#">Reply</a>
+                <a pageScroll [pageScrollOffset]="100" href="#respond">Reply</a>
               </div>
 
               <!--<a class="comment-edit-link" href="#">Edit</a>-->
@@ -48,7 +48,7 @@
 
               <div class="sayit_comment_reply_cont">
                 <div class="sayit_comment_reply">
-                  <a href="#">Reply</a>
+                  <a pageScroll [pageScrollOffset]="100" href="#respond">Reply</a>
                 </div>
 
                 <!--<a class="comment-edit-link" href="#">Edit</a>-->
@@ -75,7 +75,7 @@
         <input placeholder="Enter Your Website" name="website" type="text" value="" size="30" formControlName="website">
         <p class="form-submit">
           <input name="submit" type="submit" id="submit" class="submit" value="Post Comment"
-                 (click) = "onFormSubmit(author.value, email.value, website.value, comment.value)">
+                 (click)="onFormSubmit(author.value, email.value, website.value, comment.value)">
         </p>
       </form>
     </div>
