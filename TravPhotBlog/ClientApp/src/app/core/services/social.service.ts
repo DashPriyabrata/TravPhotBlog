@@ -9,7 +9,6 @@ import { InstaModel } from '../../shared/models/instapost';
 export class SocialService {
   //variable initialization
   instaApiURL: string = Constants.API_ROOT_URL + '/Social/Instagram/RecentMedia';
-  instaPosts: InstaModel;
 
   constructor(private httpClient: HttpClient) { }
 

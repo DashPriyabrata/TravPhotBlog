@@ -19,7 +19,7 @@
 
             <div class="sayit_comment_reply_cont">
               <div class="sayit_comment_reply">
-                <a pageScroll [pageScrollOffset]="100" href="#respond">Reply</a>
+                <a (click)="setCommentParent(comment.Id)" pageScroll [pageScrollOffset]="100" href="#respond">Reply</a>
               </div>
 
               <!--<a class="comment-edit-link" href="#">Edit</a>-->
@@ -48,7 +48,7 @@
 
               <div class="sayit_comment_reply_cont">
                 <div class="sayit_comment_reply">
-                  <a pageScroll [pageScrollOffset]="100" href="#respond">Reply</a>
+                  <a (click)="setCommentParent(reply.Id)" pageScroll [pageScrollOffset]="100" href="#respond">Reply</a>
                 </div>
 
                 <!--<a class="comment-edit-link" href="#">Edit</a>-->

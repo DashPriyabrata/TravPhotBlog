@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { BlogCommentService } from '../../../core/services/blog-comment.service';
+import { UserService } from '../../../core/services/user.service';
 import { BlogComment } from '../../../core/models/blog-comment';
+import { BlogCommenter } from '../../../core/models/blog-commenter';
 
 @Component({
   selector: 'blog-comment',
@@ -11,6 +13,7 @@ import { BlogComment } from '../../../core/models/blog-comment';
 })
 export class BlogCommentComponent implements OnInit {
   private blogId: string;
+  private commentParentId: string;
   comments: BlogComment[];
   commentForm: FormGroup;
   author: FormControl;
@@ -18,7 +21,7 @@ export class BlogCommentComponent implements OnInit {
   website: FormControl;
   comment: FormControl;
 
-  constructor(private route: ActivatedRoute, private commentService: BlogCommentService, private fb: FormBuilder) {
+  constructor(private route: ActivatedRoute, private commentService: BlogCommentService, private userService: UserService, private fb: FormBuilder) {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.blogId = params.get('blogId');
     });
@@ -38,6 +41,12 @@ export class BlogCommentComponent implements OnInit {
   }
 
   onFormSubmit(author, email, website, comment) {
+    let user = new BlogCommenter();
+    user.Name = author;
+    user.Email = email;
+    user.Website = website;
+
+    this.userService.getInstagramRecentMedia(user);
     alert('Your Input is : ' + author + ' ' + email + ' ' + website + ' ' + comment);
   }
 
@@ -46,5 +55,9 @@ export class BlogCommentComponent implements OnInit {
       this.comments = res;
     });
     this.createForm();
+  }
+
+  public setCommentParent(id: string) {
+    this.commentParentId = id;
   }
 }
