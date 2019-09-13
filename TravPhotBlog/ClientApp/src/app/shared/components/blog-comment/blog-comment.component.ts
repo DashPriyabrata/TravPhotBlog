@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { mergeMap } from 'rxjs/operators';
 import { BlogCommentService } from '../../../core/services/blog-comment.service';
 import { UserService } from '../../../core/services/user.service';
 import { BlogComment } from '../../../core/models/blog-comment';
@@ -20,6 +21,7 @@ export class BlogCommentComponent implements OnInit {
   email: FormControl;
   website: FormControl;
   comment: FormControl;
+  private commentData = new BlogComment();
 
   constructor(private route: ActivatedRoute, private commentService: BlogCommentService, private userService: UserService, private fb: FormBuilder) {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -39,14 +41,19 @@ export class BlogCommentComponent implements OnInit {
       comment: this.comment
     });
   }
-
+  
   onFormSubmit(author, email, website, comment) {
     let user = new BlogCommenter();
+    let userComment = new BlogComment();
     user.Name = author;
     user.Email = email;
     user.Website = website;
-
-    this.userService.getInstagramRecentMedia(user);
+    userComment.Comment = "Some Comment";
+    userComment.PostId = 1;
+    userComment.ParentId = 2;
+    //let status = this.userService.postBlogCommenter(user).pipe(
+    //  mergeMap(commtr => { userComment.UserId = commtr.Id; this.commentService.postComment() })
+    //  );
     alert('Your Input is : ' + author + ' ' + email + ' ' + website + ' ' + comment);
   }
 

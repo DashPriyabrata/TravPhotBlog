@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getInstagramRecentMedia(commenter: BlogCommenter) {
+  public postBlogCommenter(commenter: BlogCommenter) {
     return this.httpClient.post<BlogCommenter>(this.userApiURL, commenter);
   }
 }
