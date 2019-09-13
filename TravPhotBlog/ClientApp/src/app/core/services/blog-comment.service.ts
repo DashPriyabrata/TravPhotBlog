@@ -14,10 +14,11 @@ export class BlogCommentService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getComments(blogId: string) {
+  public getComments(blogId: number) {
     return this.httpClient.get<BlogComment[]>(this.getCommentApiURL + blogId);
   }
   public postComment(comment: BlogComment) {
+    debugger;
     return this.httpClient.post<boolean>(this.addCommentApiURL, comment);
   }
 }

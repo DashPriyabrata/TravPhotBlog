@@ -13,19 +13,20 @@ import { BlogCommenter } from '../../../core/models/blog-commenter';
   styleUrls: ['./blog-comment.component.css']
 })
 export class BlogCommentComponent implements OnInit {
-  private blogId: string;
-  private commentParentId: string;
+  private blogId: number;
+  private commentParentId: number;
   comments: BlogComment[];
   commentForm: FormGroup;
   author: FormControl;
   email: FormControl;
   website: FormControl;
   comment: FormControl;
-  private commentData = new BlogComment();
+  status: boolean;
 
   constructor(private route: ActivatedRoute, private commentService: BlogCommentService, private userService: UserService, private fb: FormBuilder) {
+    this.commentParentId = 0;
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.blogId = params.get('blogId');
+      this.blogId = Number(params.get('blogId'));
     });
   }
 
@@ -41,20 +42,24 @@ export class BlogCommentComponent implements OnInit {
       comment: this.comment
     });
   }
-  
+
   onFormSubmit(author, email, website, comment) {
     let user = new BlogCommenter();
     let userComment = new BlogComment();
     user.Name = author;
     user.Email = email;
     user.Website = website;
-    userComment.Comment = "Some Comment";
-    userComment.PostId = 1;
-    userComment.ParentId = 2;
-    //let status = this.userService.postBlogCommenter(user).pipe(
-    //  mergeMap(commtr => { userComment.UserId = commtr.Id; this.commentService.postComment() })
-    //  );
-    alert('Your Input is : ' + author + ' ' + email + ' ' + website + ' ' + comment);
+    userComment.Comment = comment;
+    userComment.PostId = this.blogId;
+    userComment.ParentId = this.commentParentId;
+    this.userService.postBlogCommenter(user).pipe(
+      mergeMap(commtr => {
+        userComment.UserId = commtr.Id;
+        return this.commentService.postComment(userComment);
+      })
+    ).subscribe(stat => {
+      this.status = stat;
+    });
   }
 
   ngOnInit() {
@@ -64,7 +69,7 @@ export class BlogCommentComponent implements OnInit {
     this.createForm();
   }
 
-  public setCommentParent(id: string) {
+  public setCommentParent(id: number) {
     this.commentParentId = id;
   }
 }
