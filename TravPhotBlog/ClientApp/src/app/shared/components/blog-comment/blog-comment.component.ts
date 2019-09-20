@@ -32,7 +32,7 @@ export class BlogCommentComponent implements OnInit {
 
   createForm() {
     this.author = new FormControl('', Validators.required);
-    this.email = new FormControl('', Validators.required);
+    this.email = new FormControl('', [Validators.required, Validators.email]);
     this.website = new FormControl('');
     this.comment = new FormControl('', Validators.required);
     this.commentForm = this.fb.group({

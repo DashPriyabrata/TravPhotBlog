@@ -18,7 +18,6 @@ export class BlogCommentService {
     return this.httpClient.get<BlogComment[]>(this.getCommentApiURL + blogId);
   }
   public postComment(comment: BlogComment) {
-    debugger;
     return this.httpClient.post<boolean>(this.addCommentApiURL, comment);
   }
 }
