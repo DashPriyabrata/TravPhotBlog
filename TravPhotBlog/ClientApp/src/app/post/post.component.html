@@ -1,3 +1,4 @@
+<div id="fb-root"></div>
 <!-- Title Block -->
 <div class="sayit_title_container row sayit_js_height sayit_block_with_fimage" [attr.data-src]="blogData.TitleImage" data-height="600">
   <div class="sayit_overlay sayit_fimage_overlay_type_light"></div>
@@ -112,8 +113,11 @@
       </div>
 
       <div class="sayit_single_divider"></div>
-
+      <!-- Post comment start -->
+      <div id="fb-comments" class="fb-comments" [attr.data-href]="fbCommentsDataUrl + '/' + blogData.NavUrlString + '/' + blogData.BlogId"
+           data-numposts="5" data-width="1140" data-mobile="true" data-order-by="reverse_time"></div>
       <blog-comment></blog-comment>
+      <!-- Post comment end -->
     </div>
   </div>
 </div>
