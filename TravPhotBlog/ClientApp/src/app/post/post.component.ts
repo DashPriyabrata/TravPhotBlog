@@ -28,7 +28,7 @@ export class PostComponent implements OnInit, AfterViewInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.blogId = params.get('blogId');
     });
-    this.fbCommentDataUrl = "http://travphoblog.com/post";
+    this.fbCommentsDataUrl = "http://travphoblog.com/post";
   }
 
   ngOnInit() {
