@@ -67,4 +67,8 @@ export class PostComponent implements OnInit, AfterViewInit {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   }
+
+  public goToByScroll(id: string) {
+    $('html,body').animate({ scrollTop: $("#" + id).offset().top - 100 }, 'slow');
+  }
 }
