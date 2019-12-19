@@ -1,12 +1,14 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import * as $ from 'jquery';
+import { Title, Meta } from '@angular/platform-browser';
 import { BlogInfoService } from '../core/services/blog-info.service';
 import { BlogContentService } from '../core/services/blog-content.service';
 import { BlogTagService } from '../core/services/blog-tag.service';
 import { BlogPost } from '../core/models/blog-post';
 import { PostContent } from '../core/models/post-content';
 import { BlogTag } from '../core/models/blog-tag';
+import { Constants } from '../configs/constants';
 
 @Component({
   selector: 'post',
@@ -23,8 +25,11 @@ export class PostComponent implements OnInit, AfterViewInit {
   prevPost: BlogPost;
   relatedPosts: BlogPost[];
   fbCommentsDataUrl: string;
+  title: string;
+  description: string;
 
-  constructor(private route: ActivatedRoute, private blogInfoService: BlogInfoService, private blogContentService: BlogContentService, private blogTagService: BlogTagService) {
+  constructor(private route: ActivatedRoute, private blogInfoService: BlogInfoService, private blogContentService: BlogContentService, private blogTagService: BlogTagService,
+    private titleService: Title, private metaTagService: Meta) {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.blogId = params.get('blogId');
     });
@@ -34,6 +39,9 @@ export class PostComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.blogInfoService.getBlogInfo(this.blogId).subscribe((res) => {
       this.blogData = res;
+      //Page Title & SEO Stuff
+      this.title = this.blogData.Title + ' - ' + Constants.SITE_TITLE;
+      this.description = this.blogData.Title + ', ' + this.blogData.City + ', ' + this.blogData.Country + ', ' + this.blogData.Category
 
       this.blogContentService.getPostContent(this.blogData.ContentId).subscribe((res) => {
         this.postContent = res;
@@ -50,6 +58,11 @@ export class PostComponent implements OnInit, AfterViewInit {
       this.blogContentService.getRelatedPosts(this.blogData.BlogTagId).subscribe((res) => {
         this.relatedPosts = res;
       });
+      //Set Page Meta
+      this.titleService.setTitle(this.title);
+      this.metaTagService.updateTag(
+        { name: 'description', content: this.description }
+      );
     });
   }
 
