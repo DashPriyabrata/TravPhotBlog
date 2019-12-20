@@ -17,5 +17,6 @@ export class BlogPost {
   public BlogTagId: number;
   public NavUrlString: string;
   public ReadingTime: string;
-  public Blogger: Blogger;
+  //Handle MySQL returning related property in lower case.
+  public blogger: Blogger;
 }

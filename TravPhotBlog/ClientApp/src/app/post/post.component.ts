@@ -27,6 +27,8 @@ export class PostComponent implements OnInit, AfterViewInit {
   fbCommentsDataUrl: string;
   title: string;
   description: string;
+  keywords: string;
+  author: string;
 
   constructor(private route: ActivatedRoute, private blogInfoService: BlogInfoService, private blogContentService: BlogContentService, private blogTagService: BlogTagService,
     private titleService: Title, private metaTagService: Meta) {
@@ -41,7 +43,9 @@ export class PostComponent implements OnInit, AfterViewInit {
       this.blogData = res;
       //Page Title & SEO Stuff
       this.title = this.blogData.Title + ' - ' + Constants.SITE_TITLE;
-      this.description = this.blogData.Title + ', ' + this.blogData.City + ', ' + this.blogData.Country + ', ' + this.blogData.Category
+      this.description = this.blogData.Title + ' ' + this.blogData.City + ' ' + this.blogData.Country + ' ' + this.blogData.Category;
+      this.keywords = this.blogData.Title + ', ' + this.blogData.City + ', ' + this.blogData.Country;
+      this.author = this.blogData.blogger.FirstName + ' ' + this.blogData.blogger.LastName;
 
       this.blogContentService.getPostContent(this.blogData.ContentId).subscribe((res) => {
         this.postContent = res;
@@ -63,6 +67,10 @@ export class PostComponent implements OnInit, AfterViewInit {
       this.metaTagService.updateTag(
         { name: 'description', content: this.description }
       );
+      this.metaTagService.addTags([
+        { name: 'keywords', content: this.keywords },
+        { name: 'author', content: this.author }
+      ]);
     });
   }
 
