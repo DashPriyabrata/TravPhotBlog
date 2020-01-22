@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { CanonicalService } from './core/services/canonical.service';
+import { Constants } from './configs/constants';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +9,12 @@ import { CanonicalService } from './core/services/canonical.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ClientApp';
+  title = Constants.SITE_TITLE;
 
-  constructor(private canonicalService: CanonicalService) { }
+  constructor(private canonicalService: CanonicalService, private metaTagService: Meta) { }
 
   ngOnInit() {
     this.canonicalService.setCanonicalURL();
+    this.metaTagService.addTag({ property: 'og:url', content: window.location.href });
   }
 }

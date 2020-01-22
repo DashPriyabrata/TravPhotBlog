@@ -69,7 +69,14 @@ export class PostComponent implements OnInit, AfterViewInit {
       );
       this.metaTagService.addTags([
         { name: 'keywords', content: this.keywords },
-        { name: 'author', content: this.author }
+        { name: 'author', content: this.author },
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.description },
+        { property: 'og:image', content: this.blogData.TitleImage },
+        { property: 'og:image:alt', content: this.blogData.City + ', ' + this.blogData.Country },
+        { property: 'og:image:height', content: '600' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'published_date', content: this.blogData.PostDate.toString() }
       ]);
     });
   }
