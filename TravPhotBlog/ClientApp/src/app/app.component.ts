@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CanonicalService } from './core/services/canonical.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ClientApp';
+
+  constructor(private canonicalService: CanonicalService) { }
+
+  ngOnInit() {
+    this.canonicalService.setCanonicalURL();
+  }
 }
