@@ -74,9 +74,11 @@ export class PostComponent implements OnInit, AfterViewInit {
         { property: 'og:description', content: this.description },
         { property: 'og:image', content: this.blogData.TitleImage },
         { property: 'og:image:alt', content: this.blogData.City + ', ' + this.blogData.Country },
-        { property: 'og:image:height', content: '600' },
+        { property: 'og:image:height', content: '630' },
         { property: 'og:image:width', content: '1200' },
-        { property: 'published_date', content: this.blogData.PostDate.toString() }
+        { property: 'og:site_name', content: Constants.SITE_TITLE },
+        { name: 'twitter:image:alt', content: this.blogData.City + ', ' + this.blogData.Country },
+        { name: 'twitter:creator', content: this.author }
       ]);
     });
   }
