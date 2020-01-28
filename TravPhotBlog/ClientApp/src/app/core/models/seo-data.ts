@@ -1,11 +1,13 @@
 export class SeoData {
-  title?: string;
-  description?: string;
-  image?: string;
-  url?: string;
-  type?: string;
-  author?: string;
-  section?: string;
-  published?: string;
-  modified?: string;
+  public Title?: string;
+  public Description?: string;
+  public Keywords?: string;
+  public Image?: string;
+  public ImageAlt?: string;
+  public Url?: string;
+  public Type?: string;
+  public Author?: string;
+  public Section?: string;
+  public Published?: string;
+  public Modified?: string;
 }

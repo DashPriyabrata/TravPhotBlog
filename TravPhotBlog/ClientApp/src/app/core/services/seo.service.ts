@@ -7,26 +7,28 @@ import { SeoData } from '../models/seo-data';
 @Injectable({
   providedIn: 'root'
 })
-export class SeoServiceService {
+export class SeoService {
 
   constructor(private readonly metaService: Meta, private readonly titleService: Title, @Inject(DOCUMENT) private readonly dom) { }
 
   public setData(data: SeoData): void {
-    this.setSection(data.section);
-    this.setTitle(data.title);
-    this.setType(data.type);
-    this.setDescription(data.description);
-    this.setImage(data.image);
-    this.setUrl(data.url);
-    this.setPublished(data.published);
-    this.setModified(data.modified);
-    this.setAuthor(data.author);
+    //this.setSection(data.section);
+    this.setTitle(data.Title);
+    //this.setType(data.Type);
+    this.setDescription(data.Description);
+    this.setKeywords(data.Keywords);
+    //this.setImage(data.Image);
+    //this.setUrl(data.Url);
+    //this.setPublished(data.Published);
+    //this.setModified(data.Modified);
+    //this.setAuthor(data.Author);
   }
 
   public setSection(section?: string): void {
     if (Boolean(section)) {
       this.metaService.updateTag({ name: 'article:section', content: section });
-    } else {
+    }
+    else {
       this.metaService.removeTag(`name='article:section'`);
     }
   }
@@ -35,14 +37,11 @@ export class SeoServiceService {
     this.titleService.setTitle(title);
     if (title && title.length) {
       this.metaService.updateTag({ name: 'twitter:title', content: title });
-      this.metaService.updateTag({ name: 'twitter:image:alt', content: title });
-      this.metaService.updateTag({ property: 'og:image:alt', content: title });
       this.metaService.updateTag({ property: 'og:title', content: title });
       this.metaService.updateTag({ name: 'title', content: title });
-    } else {
+    }
+    else {
       this.metaService.removeTag(`name='twitter:title'`);
-      this.metaService.removeTag(`name='twitter:image:alt'`);
-      this.metaService.removeTag(`property='og:image:alt'`);
       this.metaService.removeTag(`property='og:title'`);
       this.metaService.removeTag(`name='title'`);
     }
@@ -51,7 +50,8 @@ export class SeoServiceService {
   public setType(type?: string) {
     if (type && type.length) {
       this.metaService.updateTag({ property: 'og:type', content: type });
-    } else {
+    }
+    else {
       this.metaService.removeTag(`property='og:type'`);
     }
   }
@@ -61,29 +61,47 @@ export class SeoServiceService {
       this.metaService.updateTag({ name: 'twitter:description', content: description });
       this.metaService.updateTag({ property: 'og:description', content: description });
       this.metaService.updateTag({ name: 'description', content: description });
-    } else {
+    }
+    else {
       this.metaService.removeTag(`name='twitter:description'`);
       this.metaService.removeTag(`property='og:description'`);
       this.metaService.removeTag(`name='description'`);
     }
   }
 
-  public setImage(image?: string) {
+  public setKeywords(keywords?: string) {
+    if (keywords && keywords.length) {
+      this.metaService.updateTag({ name: 'keywords', content: keywords });
+    }
+    else {
+      this.metaService.removeTag(`name='keywords'`);
+    }
+  }
+
+  public setImage(image?: string, alt?: string) {
     if (image && image.length) {
       this.metaService.updateTag({ name: 'twitter:image', content: image });
+      this.metaService.updateTag({ name: 'twitter:image:alt', content: alt });
       this.metaService.updateTag({ property: 'og:image', content: image });
+      this.metaService.updateTag({ property: 'og:image:alt', content: alt });
       this.metaService.updateTag({ property: 'og:image:height', content: '630' });
-    } else {
+      this.metaService.updateTag({ property: 'og:image:width', content: '1200' });
+    }
+    else {
       this.metaService.removeTag(`name='twitter:image'`);
+      this.metaService.removeTag(`name='twitter:image:alt'`);
       this.metaService.removeTag(`property='og:image'`);
+      this.metaService.removeTag(`property='og:image:alt'`);
       this.metaService.removeTag(`property='og:image:height'`);
+      this.metaService.removeTag(`property='og:image:width'`);
     }
   }
 
   public setUrl(url?: string) {
     if (url && url.length) {
       this.metaService.updateTag({ property: 'og:url', content: url });
-    } else {
+    }
+    else {
       this.metaService.removeTag(`property='og:url'`);
     }
     this.setCanonicalUrl(url);
@@ -147,12 +165,11 @@ export class SeoServiceService {
       this.dom.head.removeChild(canonicalElement);
     }
 
-    if (url && url.length) {
-      const canURL = url == undefined ? this.dom.URL : url;
-      const link: HTMLLinkElement = this.dom.createElement('link');
-      link.setAttribute('rel', 'canonical');
-      this.dom.head.appendChild(link);
-      link.setAttribute('href', canURL);
-    }
+    const canURL = url == undefined ? this.dom.URL : url;
+    const link: HTMLLinkElement = this.dom.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    this.dom.head.appendChild(link);
+    link.setAttribute('href', canURL);
+
   }
 }

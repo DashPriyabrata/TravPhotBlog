@@ -1,13 +1,16 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import * as $ from 'jquery';
-import { Title, Meta } from '@angular/platform-browser';
+import { Meta } from '@angular/platform-browser';
+
 import { BlogInfoService } from '../core/services/blog-info.service';
 import { BlogContentService } from '../core/services/blog-content.service';
 import { BlogTagService } from '../core/services/blog-tag.service';
+import { SeoService } from '../core/services/seo.service';
 import { BlogPost } from '../core/models/blog-post';
 import { PostContent } from '../core/models/post-content';
 import { BlogTag } from '../core/models/blog-tag';
+import { SeoData } from '../core/models/seo-data';
 import { Constants } from '../configs/constants';
 
 @Component({
@@ -18,6 +21,7 @@ import { Constants } from '../configs/constants';
 export class PostComponent implements OnInit, AfterViewInit {
 
   private blogId: string;
+  private seoData: SeoData;
   blogData: BlogPost;
   postContent: PostContent;
   tags: BlogTag[];
@@ -25,13 +29,13 @@ export class PostComponent implements OnInit, AfterViewInit {
   prevPost: BlogPost;
   relatedPosts: BlogPost[];
   fbCommentsDataUrl: string;
-  title: string;
-  description: string;
-  keywords: string;
-  author: string;
+  private title: string;
+  private description: string;
+  private keywords: string;
+  private author: string;
 
   constructor(private route: ActivatedRoute, private blogInfoService: BlogInfoService, private blogContentService: BlogContentService, private blogTagService: BlogTagService,
-    private titleService: Title, private metaTagService: Meta) {
+    private metaTagService: Meta, private seoService: SeoService) {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.blogId = params.get('blogId');
     });
@@ -63,23 +67,27 @@ export class PostComponent implements OnInit, AfterViewInit {
         this.relatedPosts = res;
       });
       //Set Page Meta
-      this.titleService.setTitle(this.title);
-      this.metaTagService.updateTag(
-        { name: 'description', content: this.description }
-      );
-      this.metaTagService.addTags([
-        { name: 'keywords', content: this.keywords },
-        { name: 'author', content: this.author },
-        { property: 'og:title', content: this.title },
-        { property: 'og:description', content: this.description },
-        { property: 'og:image', content: this.blogData.TitleImage },
-        { property: 'og:image:alt', content: this.blogData.City + ', ' + this.blogData.Country },
-        { property: 'og:image:height', content: '630' },
-        { property: 'og:image:width', content: '1200' },
-        { property: 'og:site_name', content: Constants.SITE_TITLE },
-        { name: 'twitter:image:alt', content: this.blogData.City + ', ' + this.blogData.Country },
-        { name: 'twitter:creator', content: this.author }
-      ]);
+      this.seoData = Object.assign(new SeoData(), {
+        Title: this.title,
+        Description: this.description,
+        Keywords: this.keywords
+      });
+
+      this.seoService.setData(this.seoData);
+      
+      //this.metaTagService.addTags([
+      //  { name: 'keywords', content: this.keywords },
+      //  { name: 'author', content: this.author },
+      //  { property: 'og:title', content: this.title },
+      //  { property: 'og:description', content: this.description },
+      //  { property: 'og:image', content: this.blogData.TitleImage },
+      //  { property: 'og:image:alt', content: this.blogData.City + ', ' + this.blogData.Country },
+      //  { property: 'og:image:height', content: '630' },
+      //  { property: 'og:image:width', content: '1200' },
+      //  { property: 'og:site_name', content: Constants.SITE_TITLE },
+      //  { name: 'twitter:image:alt', content: this.blogData.City + ', ' + this.blogData.Country },
+      //  { name: 'twitter:creator', content: this.author }
+      //]);
     });
   }
 

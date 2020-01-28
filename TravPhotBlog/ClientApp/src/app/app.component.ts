@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
-import { CanonicalService } from './core/services/canonical.service';
+import { SeoService } from './core/services/seo.service';
 import { Constants } from './configs/constants';
 
 @Component({
@@ -11,10 +10,9 @@ import { Constants } from './configs/constants';
 export class AppComponent {
   title = Constants.SITE_TITLE;
 
-  constructor(private canonicalService: CanonicalService, private metaTagService: Meta) { }
+  constructor(private seoService: SeoService) { }
 
   ngOnInit() {
-    this.canonicalService.setCanonicalURL();
-    this.metaTagService.addTag({ property: 'og:url', content: window.location.href });
+    this.seoService.setUrl(window.location.href);
   }
 }
