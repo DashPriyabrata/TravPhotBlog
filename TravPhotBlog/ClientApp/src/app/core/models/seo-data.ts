@@ -10,4 +10,5 @@ export class SeoData {
   public Section?: string;
   public Published?: string;
   public Modified?: string;
+  public SiteName?: string;
 }

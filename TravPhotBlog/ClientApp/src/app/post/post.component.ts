@@ -70,24 +70,15 @@ export class PostComponent implements OnInit, AfterViewInit {
       this.seoData = Object.assign(new SeoData(), {
         Title: this.title,
         Description: this.description,
-        Keywords: this.keywords
+        Keywords: this.keywords,
+        Author: this.author,
+        Image: this.blogData.TitleImage,
+        ImageAlt: this.blogData.City + ', ' + this.blogData.Country,
+        SiteName: Constants.SITE_TITLE,
+        Published: this.blogData.PostDate
       });
 
       this.seoService.setData(this.seoData);
-      
-      //this.metaTagService.addTags([
-      //  { name: 'keywords', content: this.keywords },
-      //  { name: 'author', content: this.author },
-      //  { property: 'og:title', content: this.title },
-      //  { property: 'og:description', content: this.description },
-      //  { property: 'og:image', content: this.blogData.TitleImage },
-      //  { property: 'og:image:alt', content: this.blogData.City + ', ' + this.blogData.Country },
-      //  { property: 'og:image:height', content: '630' },
-      //  { property: 'og:image:width', content: '1200' },
-      //  { property: 'og:site_name', content: Constants.SITE_TITLE },
-      //  { name: 'twitter:image:alt', content: this.blogData.City + ', ' + this.blogData.Country },
-      //  { name: 'twitter:creator', content: this.author }
-      //]);
     });
   }
 

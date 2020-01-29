@@ -17,11 +17,12 @@ export class SeoService {
     //this.setType(data.Type);
     this.setDescription(data.Description);
     this.setKeywords(data.Keywords);
-    //this.setImage(data.Image);
+    this.setImage(data.Image, data.ImageAlt);
     //this.setUrl(data.Url);
-    //this.setPublished(data.Published);
+    this.setPublished(data.Published);
     //this.setModified(data.Modified);
-    //this.setAuthor(data.Author);
+    this.setAuthor(data.Author);
+    this.setSiteCreator(data.SiteName);
   }
 
   public setSection(section?: string): void {
@@ -139,11 +140,13 @@ export class SeoService {
     }
   }
 
-  public setTwitterSiteCreator(site?: string): void {
+  public setSiteCreator(site?: string): void {
     if (Boolean(site)) {
+      this.metaService.updateTag({ property: 'og:site_name', content: site });
       this.metaService.updateTag({ name: 'twitter:site', content: site });
       this.metaService.updateTag({ name: 'twitter:creator', content: site });
     } else {
+      this.metaService.removeTag(`property='og:site_name'`);
       this.metaService.removeTag(`name='twitter:site'`);
       this.metaService.removeTag(`name='twitter:creator'`);
     }
