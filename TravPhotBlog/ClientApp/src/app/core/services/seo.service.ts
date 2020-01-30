@@ -12,7 +12,6 @@ export class SeoService {
   constructor(private readonly metaService: Meta, private readonly titleService: Title, @Inject(DOCUMENT) private readonly dom) { }
 
   public setData(data: SeoData): void {
-    //this.setSection(data.section);
     this.setTitle(data.Title);
     //this.setType(data.Type);
     this.setDescription(data.Description);
@@ -22,6 +21,7 @@ export class SeoService {
     this.setPublished(data.Published);
     //this.setModified(data.Modified);
     this.setAuthor(data.Author);
+    this.setTwitterCard(data.TwitterCard);
     this.setSiteCreator(data.SiteName);
   }
 

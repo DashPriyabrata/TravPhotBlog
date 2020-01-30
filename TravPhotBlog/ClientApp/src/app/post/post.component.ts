@@ -75,7 +75,8 @@ export class PostComponent implements OnInit, AfterViewInit {
         Image: this.blogData.TitleImage,
         ImageAlt: this.blogData.City + ', ' + this.blogData.Country,
         SiteName: Constants.SITE_TITLE,
-        Published: this.blogData.PostDate
+        Published: this.blogData.PostDate,
+        TwitterCard: 'summary_large_image'
       });
 
       this.seoService.setData(this.seoData);

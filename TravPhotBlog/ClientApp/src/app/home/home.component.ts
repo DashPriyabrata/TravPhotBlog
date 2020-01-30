@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+
+import { SeoService } from '../core/services/seo.service';
+import { SeoData } from '../core/models/seo-data';
 import { Constants } from '../configs/constants';
 
 @Component({
@@ -8,14 +10,20 @@ import { Constants } from '../configs/constants';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  private seoData: SeoData;
   title = 'Home - ' + Constants.SITE_TITLE;
-  constructor(private titleService: Title, private metaTagService: Meta) { }
+  constructor(private seoService: SeoService) { }
 
   ngOnInit() {
-    this.titleService.setTitle(this.title);
-    this.metaTagService.updateTag(
-      { name: 'description', content: 'TravPhotBlog Home Page' }
-    );
+    //Set Page Meta
+    this.seoData = Object.assign(new SeoData(), {
+      Title: this.title,
+      Description: 'TravPhotBlog Home - Where you find travel blogs, knowledge about places you want to visit and some of the finest Landscape HD photos you would find around!',
+      SiteName: Constants.SITE_TITLE,
+      TwitterCard: 'summary'
+    });
+
+    this.seoService.setData(this.seoData);
   }
 
 }

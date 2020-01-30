@@ -11,4 +11,5 @@ export class SeoData {
   public Published?: string;
   public Modified?: string;
   public SiteName?: string;
+  public TwitterCard?: string;
 }
