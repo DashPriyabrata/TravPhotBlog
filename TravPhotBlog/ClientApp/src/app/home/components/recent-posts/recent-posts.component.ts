@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as $ from 'jquery';
 import { PrecisePostsService } from '../../../core/services/precise-posts.service';
-
+import { ImageService } from '../../../core/services/image.service';
 import { BlogPost } from '../../../core/models/blog-post';
 declare var VanillaTilt;
 
@@ -13,11 +13,12 @@ declare var VanillaTilt;
 export class RecentPostsComponent implements OnInit, AfterViewInit {
   recentPosts: BlogPost[];
 
-  constructor(private precisePostsService: PrecisePostsService) { }
+  constructor(private precisePostsService: PrecisePostsService, private imgService: ImageService) { }
 
   ngOnInit() {
     this.precisePostsService.getPrecisePosts(0, 6).subscribe((res) => {
       this.recentPosts = res;
+      this.recentPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post") + "?width=853&height=1280");
     });
   }
 

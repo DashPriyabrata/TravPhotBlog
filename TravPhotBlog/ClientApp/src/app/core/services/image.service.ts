@@ -8,10 +8,12 @@ export class ImageService {
 
   constructor() { }
 
-  public getImageUrl(imageName: string, folderName: string) {
-    if (folderName)
-      return Constants.CLOUDIMG_BASEURL + folderName + "/" + imageName;
+  public getImageUrl(imagePath: string, folderName: string) {
+    if (imagePath.startsWith("https") || imagePath.startsWith("http"))
+      return imagePath;
+    else if (folderName)
+      return Constants.CLOUDIMG_BASEURL + folderName + "/" + imagePath;
     else
-      return Constants.CLOUDIMG_BASEURL + imageName;
+      return Constants.CLOUDIMG_BASEURL + imagePath;
   }
 }
