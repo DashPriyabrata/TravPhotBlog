@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Constants } from '../../configs/constants';
+import { Constants } from '../../core/configs/constants';
 
 import { BlogPost } from '../models/blog-post';
 

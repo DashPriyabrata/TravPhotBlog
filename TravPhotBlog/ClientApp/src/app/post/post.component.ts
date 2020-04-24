@@ -11,7 +11,7 @@ import { BlogPost } from '../core/models/blog-post';
 import { PostContent } from '../core/models/post-content';
 import { BlogTag } from '../core/models/blog-tag';
 import { SeoData } from '../core/models/seo-data';
-import { Constants } from '../configs/constants';
+import { Constants } from '../core/configs/constants';
 
 @Component({
   selector: 'post',

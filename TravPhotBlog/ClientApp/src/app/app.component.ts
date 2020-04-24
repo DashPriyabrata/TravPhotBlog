@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SeoService } from './core/services/seo.service';
-import { Constants } from './configs/constants';
+import { Constants } from './core/configs/constants';
 
 @Component({
   selector: 'app-root',

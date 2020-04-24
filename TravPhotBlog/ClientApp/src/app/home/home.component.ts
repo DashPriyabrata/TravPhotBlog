@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SeoService } from '../core/services/seo.service';
+import { ImageService } from '../core/services/image.service';
 import { SeoData } from '../core/models/seo-data';
-import { Constants } from '../configs/constants';
+import { Constants } from '../core/configs/constants';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,9 @@ import { Constants } from '../configs/constants';
 export class HomeComponent implements OnInit {
   private seoData: SeoData;
   title = 'Home - ' + Constants.SITE_TITLE;
-  constructor(private seoService: SeoService) { }
+  bloggerImageUrl: string;
+
+  constructor(private seoService: SeoService, private imgService: ImageService) { }
 
   ngOnInit() {
     //Set Page Meta
@@ -24,6 +27,7 @@ export class HomeComponent implements OnInit {
     });
 
     this.seoService.setData(this.seoData);
+    this.bloggerImageUrl = this.imgService.getImageUrl("Priyabrata.jpg", "Blogger") + "?width=960&height=640";
   }
 
 }
