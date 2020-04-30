@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import * as $ from 'jquery';
 import { Meta } from '@angular/platform-browser';
-
+import { ImageService } from '../core/services/image.service';
 import { BlogInfoService } from '../core/services/blog-info.service';
 import { BlogContentService } from '../core/services/blog-content.service';
 import { BlogTagService } from '../core/services/blog-tag.service';
@@ -35,7 +35,7 @@ export class PostComponent implements OnInit, AfterViewInit {
   private author: string;
 
   constructor(private route: ActivatedRoute, private blogInfoService: BlogInfoService, private blogContentService: BlogContentService, private blogTagService: BlogTagService,
-    private metaTagService: Meta, private seoService: SeoService) {
+    private metaTagService: Meta, private seoService: SeoService, private imgService: ImageService) {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.blogId = params.get('blogId');
     });
@@ -45,6 +45,7 @@ export class PostComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.blogInfoService.getBlogInfo(this.blogId).subscribe((res) => {
       this.blogData = res;
+      this.blogData.TitleImage = this.imgService.getImageUrl(this.blogData.TitleImage, "Post") + "?width=1920&height=1280";
       //Page Title & SEO Stuff
       this.title = this.blogData.Title + ' - ' + Constants.SITE_TITLE;
       this.description = this.blogData.Title + ' ' + this.blogData.City + ' ' + this.blogData.Country + ' ' + this.blogData.Category;
@@ -65,6 +66,7 @@ export class PostComponent implements OnInit, AfterViewInit {
       });
       this.blogContentService.getRelatedPosts(this.blogData.BlogTagId).subscribe((res) => {
         this.relatedPosts = res;
+        this.relatedPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post") + "?width=1920&height=1280");
       });
       //Set Page Meta
       this.seoData = Object.assign(new SeoData(), {

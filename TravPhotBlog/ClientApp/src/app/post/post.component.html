@@ -7,7 +7,7 @@
     <div class="sayit_post_category_cont">
       <a href="#">{{blogData.Country}}</a>
       /
-      <span class="sayit_post_date">{{blogData.PostDate | date: longDate}}</span>
+      <span class="sayit_post_date">{{blogData.PostDate | date:'longDate'}}</span>
     </div>
 
     <h1 class="sayit_post_title">{{blogData.Title}}</h1>
@@ -103,7 +103,7 @@
               <a href="#">{{post.Country}}</a>
             </div>
             /
-            <div class="sayit_post_date">{{post.PostDate | date: longDate}}</div>
+            <div class="sayit_post_date">{{post.PostDate | date:'longDate'}}</div>
           </div>
 
           <h4 class="sayit_post_title">
