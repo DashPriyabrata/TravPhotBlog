@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CommonModule } from '@angular/common';
@@ -13,13 +13,17 @@ import { InstaPostComponent } from './shared/components/instapost/instapost.comp
 import { SafePipe } from './shared/pipes/safe.pipe';
 import { HomeModule } from './home/home.module';
 import { PostModule } from './post/post.module';
+import { LoaderService } from './core/services/loader.service';
+import { LoaderInterceptor } from './core/interceptors/loader-interceptor';
+import { MyLoaderComponent } from './shared/components/my-loader/my-loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     //NavigationComponent,
     InstaPostComponent,
-    SafePipe
+    SafePipe,
+    MyLoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,10 @@ import { PostModule } from './post/post.module';
     HomeModule,
     PostModule
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent, InstaPostComponent]
 })
 export class AppModule { }

@@ -66,7 +66,7 @@ export class PostComponent implements OnInit, AfterViewInit {
       });
       this.blogContentService.getRelatedPosts(this.blogData.BlogTagId).subscribe((res) => {
         this.relatedPosts = res;
-        this.relatedPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post") + "?width=1920&height=1280");
+        this.relatedPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post") + "?width=1170&height=959");
       });
       //Set Page Meta
       this.seoData = Object.assign(new SeoData(), {
