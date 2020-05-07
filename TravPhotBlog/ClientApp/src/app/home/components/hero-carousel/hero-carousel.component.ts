@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import * as $ from 'jquery';
 import { FeaturedPostsService } from '../../../core/services/featured-posts.service';
-import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
-import { Location } from '@angular/common';
-
+import { ImageService } from '../../../core/services/image.service';
 import { BlogPost } from '../../../core/models/blog-post';
 
 @Component({
@@ -10,17 +9,21 @@ import { BlogPost } from '../../../core/models/blog-post';
   templateUrl: './hero-carousel.component.html',
   styleUrls: ['./hero-carousel.component.css']
 })
-export class HeroCarouselComponent implements OnInit {
+export class HeroCarouselComponent implements OnInit, AfterViewInit {
   featuredPosts: BlogPost[];
 
-
-  constructor(private featuredPostsService: FeaturedPostsService, private _sanitizer: DomSanitizer, private loc: Location) { }
+  constructor(private featuredPostsService: FeaturedPostsService, private imgService: ImageService) { }
 
   ngOnInit() {
     this.featuredPostsService.getFeaturedPosts().subscribe((res) => {
       this.featuredPosts = res;
-      //debugger;
+      this.featuredPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post") + "?width=1920&height=1280");
     });
   }
 
+  ngAfterViewInit() {
+    $(".sayit_slider_item_wrapper").each(function () {
+      $(this).css('background-image', 'url(' + $(this).attr('data-src') + ')');
+    });
+  }
 }

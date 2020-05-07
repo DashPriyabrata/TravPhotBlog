@@ -1,0 +1,6 @@
+/* Override the Social Icons Widget style to show smaller social icons for authors in blog page */
+.blog_social_icon {
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 15px;
+}

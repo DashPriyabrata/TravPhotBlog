@@ -1,0 +1,82 @@
+<!-- Comments Area -->
+<div class="sayit_comments_cont">
+  <div class="sayit_comments_wrapper">
+    <h5 class="sayit_comments_title">{{comments.length}} Comments on This Post</h5>
+
+    <div class="sayit_comment_list">
+      <div class="comment even" *ngFor="let comment of comments | parentId:0">
+        <div class="sayit_comment_ava">
+          <img src="{{comment.Commenter.Avatar || 'assets/imgs/clipart/ava-1.png'}}" alt="" width="70" height="70" />
+        </div>
+
+        <div class="sayit_comment_body">
+          <div class="sayit_comment_meta">
+            <div class="sayit_comment_author_cont">
+              <h6 class="innertitle sayit_comment_author">{{comment.Commenter.Name}}</h6>
+
+              <div class="sayit_comment_date">{{comment.Date | date: longDate}}</div>
+            </div>
+
+            <div class="sayit_comment_reply_cont">
+              <div class="sayit_comment_reply">
+                <a (click)="setCommentParent(comment.Id)" pageScroll [pageScrollOffset]="100" href="#respond">Reply</a>
+              </div>
+
+              <!--<a class="comment-edit-link" href="#">Edit</a>-->
+            </div>
+
+            <div class="clear"></div>
+          </div>
+
+          <div class="sayit_comment_text">
+            <p>{{comment.Comment}}</p>
+          </div>
+        </div>
+
+        <div class="comment odd" *ngFor="let reply of comments | parentId:comment.Id">
+          <div class="sayit_comment_ava">
+            <img src="{{reply.Commenter.Avatar || 'assets/imgs/clipart/ava-1.png'}}" alt="" width="70" height="70" />
+          </div>
+
+          <div class="sayit_comment_body">
+            <div class="sayit_comment_meta">
+              <div class="sayit_comment_author_cont">
+                <h6 class="innertitle sayit_comment_author">{{reply.Commenter.Name}}</h6>
+
+                <div class="sayit_comment_date">{{reply.Date | date: longDate}}</div>
+              </div>
+
+              <div class="sayit_comment_reply_cont">
+                <div class="sayit_comment_reply">
+                  <a (click)="setCommentParent(reply.Id)" pageScroll [pageScrollOffset]="100" href="#respond">Reply</a>
+                </div>
+
+                <!--<a class="comment-edit-link" href="#">Edit</a>-->
+              </div>
+
+              <div class="clear"></div>
+            </div>
+
+            <div class="sayit_comment_text">
+              <p>{{reply.Comment}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comment-respond" id="respond">
+      <h5 class="sayit_reply_comment_title">Let us know your thoughts about this topic </h5>
+
+      <form name="comment_form" id="comment_form" [formGroup]="commentForm" ngNativeValidate (ngSubmit)='onFormSubmit(author.value, email.value, website.value, comment.value)'>
+        <textarea name="comment" cols="45" rows="5" placeholder="Join the Conversation" id="comment-message" class="form-field" form="comment_form" required formControlName="comment"></textarea>
+        <input placeholder="Enter Your Name *" name="author" type="text" size="30" required formControlName="author">
+        <input placeholder="Enter Your Email *" name="email" type="email" value="" size="30" required formControlName="email">
+        <input placeholder="Enter Your Website" name="website" type="url" value="" size="30" formControlName="website">
+        <p class="form-submit">
+          <input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

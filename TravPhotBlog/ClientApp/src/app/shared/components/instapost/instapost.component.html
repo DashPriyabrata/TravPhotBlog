@@ -1,16 +1,28 @@
 <!-- Instagram start -->
-<section class="no-padding">
-  <div class="container-fluid">
-    <h2 class="title-classic text-center">Instagram</h2>
-    <owl-carousel-o id="first" [options]="customOptions" class="instagram-carousel">
+<div class="sayit_photostream">
+  <div class="container-fluid instagram-carousel instagallery">
+    <h2 class="text-center" style="text-decoration: underline;">Instagram</h2>
+
+    <owl-carousel-o id="first" [options]="customOptions">
       <ng-container *ngFor="let post of instaPosts">
-        <ng-template carouselSlide [id]="post.Id" [width]="(post.Standard_Resolution.Width)/1.5">
-          <a [href]="post.Link" target="_blank">
-            <img [src]="post.Standard_Resolution.Url" [alt]="(post.Location != null) ? post.Location.Name : ''" style="display:block; object-fit: cover; height: 300px;">
+        <ng-template carouselSlide [id]="post.Id" [width]="(post.Images.Standard_Resolution.Width)/1.5">
+          <a class="ig-item" style="width:100%;" [href]="post.Link" target="_blank">
+            <img [src]="post.Images.Standard_Resolution.Url" [alt]="(post.Location != null) ? post.Location.Name : ''" style="display:block; object-fit: cover; height: 300px;">
+            <span class="ig-likes-comments">
+              <span>
+                <i class="fa fa-heart"></i>
+                {{post.Likes.Count}}
+              </span>
+
+              <span>
+                <i class="fa fa-comment"></i>
+                0
+              </span>
+            </span>
           </a>
         </ng-template>
       </ng-container>
     </owl-carousel-o><!-- Carousel end -->
   </div><!-- Container end -->
-</section>
+</div>
 <!-- Instagram end -->

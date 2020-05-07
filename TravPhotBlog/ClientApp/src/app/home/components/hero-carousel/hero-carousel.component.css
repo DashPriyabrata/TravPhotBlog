@@ -1,0 +1,4 @@
+:host { /*host targets selector: 'hero-carousel'*/
+  display: block;
+  width: 100%;
+}

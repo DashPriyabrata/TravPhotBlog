@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SeoService } from './core/services/seo.service';
+import { Constants } from './core/configs/constants';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ClientApp';
+  title = Constants.SITE_TITLE;
+
+  constructor(private seoService: SeoService) { }
+
+  ngOnInit() {
+    this.seoService.setUrl(window.location.href);
+  }
 }

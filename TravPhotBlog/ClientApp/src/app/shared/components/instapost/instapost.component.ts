@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialService } from '../../../core/services/social.service';
-
 import { InstaPost } from '../../models/instapost';
 
 @Component({
@@ -41,7 +40,7 @@ export class InstaPostComponent implements OnInit {
 
   ngOnInit() {
     this.socialService.getInstagramRecentMedia().subscribe((res) => {
-      this.instaPosts = res;
+      this.instaPosts = res.Data;
     });
   }
 }

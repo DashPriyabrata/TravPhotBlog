@@ -9,7 +9,7 @@ export class BlogPost {
   public Country: string;
   public IsActive: boolean;
   public BloggerId: number;
-  public Category; string;
+  public Category: string;
   public IsFeatured: boolean;
   public IsCommentsEnabled: boolean;
   public Views: number;
@@ -17,5 +17,6 @@ export class BlogPost {
   public BlogTagId: number;
   public NavUrlString: string;
   public ReadingTime: string;
-  public Blogger: Blogger;
+  //Handle MySQL returning related property in lower case.
+  public blogger: Blogger;
 }
