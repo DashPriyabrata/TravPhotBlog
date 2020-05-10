@@ -28,6 +28,7 @@
     "ngx-owl-carousel-o": "^1.1.5",
     "ngx-page-scroll": "^7.0.0",
     "ngx-page-scroll-core": "^7.0.0",
+    "photo-sphere-viewer": "^4.0.2",
     "popper.js": "^1.15.0",
     "rxjs": "~6.5.5",
     "tslib": "^1.10.0",

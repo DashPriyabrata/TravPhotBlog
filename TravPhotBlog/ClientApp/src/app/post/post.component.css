@@ -1,6 +1,25 @@
+@import "photo-sphere-viewer/dist/photo-sphere-viewer.css";
 /* Override the Social Icons Widget style to show smaller social icons for authors in blog page */
 .blog_social_icon {
   margin-bottom: 0;
   margin-top: 10px;
   font-size: 15px;
+}
+
+#viewer {
+  /*width: 85vw;*/
+  height: 65vh;
+  margin-bottom: 10px
+}
+
+@media only screen and (max-width: 415px) {
+  #viewer {
+    height: 25vh;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1025px) {
+  #viewer {
+    height: 35vh;
+  }
 }

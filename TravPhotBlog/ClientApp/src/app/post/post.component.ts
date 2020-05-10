@@ -12,6 +12,7 @@ import { PostContent } from '../core/models/post-content';
 import { BlogTag } from '../core/models/blog-tag';
 import { SeoData } from '../core/models/seo-data';
 import { Constants } from '../core/configs/constants';
+import { Viewer } from 'photo-sphere-viewer';
 
 @Component({
   selector: 'post',
@@ -54,6 +55,25 @@ export class PostComponent implements OnInit, AfterViewInit {
 
       this.blogContentService.getPostContent(this.blogData.ContentId).subscribe((res) => {
         this.postContent = res;
+
+        const viewer = new Viewer({
+          container: document.querySelector('#viewer'),
+          panorama: this.imgService.getImageUrl(this.postContent.Panorama.ImageSrc, "Post"),
+          caption: this.postContent.Panorama.Caption + ' <b>&copy; TravPhotBlog</b>',
+          loadingImg: 'https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif',
+          navbar: 'autorotate zoom caption fullscreen',
+          //defaultLat: 0.3,
+          mousewheel: false,
+          touchmoveTwoFingers: true,
+          panoData: {
+            fullWidth: this.postContent.Panorama.FullWidth,
+            fullHeight: this.postContent.Panorama.FullHeight,
+            croppedWidth: this.postContent.Panorama.CroppedWidth,
+            croppedHeight: this.postContent.Panorama.CroppedHeight,
+            croppedX: this.postContent.Panorama.CroppedX,
+            croppedY: this.postContent.Panorama.CroppedY
+          }
+        });
       });
       this.blogTagService.getTags(this.blogData.BlogTagId).subscribe((res) => {
         this.tags = res;
