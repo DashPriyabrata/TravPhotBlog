@@ -14,7 +14,7 @@
   <div class="sayit_widget_container sayit_mb_10">
     <div class="sayit_featured_posts sayit_items_3">
       <!-- Items -->
-      <div class="sayit_posts_item" *ngFor="let post of featuredPosts | slice:0:3">
+      <div class="sayit_posts_item" *ngFor="let post of favouritePosts | slice:0:3">
         <div class="sayit_fimage_cont">
           <a href="post/{{post.NavUrlString}}/{{post.BlogId}}">
             <img src="{{post.TitleImage}}" alt="{{post.City}}.jpg">

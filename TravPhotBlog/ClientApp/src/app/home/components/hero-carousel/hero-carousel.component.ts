@@ -17,7 +17,8 @@ export class HeroCarouselComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.featuredPostsService.getFeaturedPosts().subscribe((res) => {
       this.featuredPosts = res;
-      this.featuredPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post") + "?width=1920&height=1280");
+      this.featuredPosts.forEach(x => x.TitleImage =
+        this.imgService.getImageUrl(x.TitleImage, "Post").replace(/ /g, "%20") + "?width=1920&height=1280");
     });
   }
 

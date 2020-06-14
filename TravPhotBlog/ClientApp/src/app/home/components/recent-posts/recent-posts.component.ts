@@ -18,7 +18,7 @@ export class RecentPostsComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.precisePostsService.getPrecisePosts(0, 6).subscribe((res) => {
       this.recentPosts = res;
-      this.recentPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post") + "?width=853&height=1280");
+      this.recentPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post").replace(/ /g, "%20") + "?width=853&height=1280");
     });
   }
 

@@ -17,7 +17,7 @@
                 <h2 class="sayit_post_title"><a href="/post/{{featuredPosts[0].NavUrlString}}/{{featuredPosts[0].BlogId}}">{{featuredPosts[0].Title}}</a></h2>
 
                 <div class="sayit_post_slider_nav_buttons_cont">
-                  <a class="sayit_prev_post_slide_button sayit_inner_post_slide_button" href="javascript:void(0)" data-slide=".item_0" data-number="0"><i class="fa fa-angle-left"></i></a>
+                  <a class="sayit_prev_post_slide_button sayit_inner_post_slide_button" href="javascript:void(0)" data-slide=".item_4" data-number="4"><i class="fa fa-angle-left"></i></a>
                   <a class="sayit_next_post_slide_button sayit_inner_post_slide_button" href="javascript:void(0)" data-slide=".item_2" data-number="2"><i class="fa fa-angle-right"></i></a>
                 </div>
               </div>
@@ -64,11 +64,32 @@
             </div>
           </div>
 
+          <!-- Item 4 -->
+          <div class="sayit_post_slider_item item_4" data-number="4">
+            <div class="sayit_slider_item_wrapper" [attr.data-src]="featuredPosts[3].TitleImage">
+              <div class="sayit_overlay"></div>
+
+              <div class="sayit_post_meta_cont">
+                <div class="sayit_post_category_cont">
+                  <a href="#">{{featuredPosts[3].Country}}</a>
+                </div>
+
+                <h2 class="sayit_post_title"><a href="/post/{{featuredPosts[3].NavUrlString}}/{{featuredPosts[3].BlogId}}">{{featuredPosts[3].Title}}</a></h2>
+
+                <div class="sayit_post_slider_nav_buttons_cont">
+                  <a class="sayit_prev_post_slide_button sayit_inner_post_slide_button" href="javascript:void(0)" data-slide=".item_3" data-number="3"><i class="fa fa-angle-left"></i></a>
+                  <a class="sayit_next_post_slide_button sayit_inner_post_slide_button" href="javascript:void(0)" data-slide=".item_1" data-number="1"><i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Slider Navigation -->
           <div class="sayit_post_slider_nav">
             <a class="sayit_post_slider_nav_button button_1" href="javascript:void(0)" data-slide=".item_1"></a>
             <a class="sayit_post_slider_nav_button button_2" href="javascript:void(0)" data-slide=".item_2"></a>
             <a class="sayit_post_slider_nav_button button_3" href="javascript:void(0)" data-slide=".item_3"></a>
+            <a class="sayit_post_slider_nav_button button_4" href="javascript:void(0)" data-slide=".item_4"></a>
           </div>
         </div>
       </div>
