@@ -2,3 +2,14 @@
   display: block;
   width: 100%;
 }
+
+.post_category_city {
+  color: #ffffff;
+  display: inline;
+  font-size: 21px;
+}
+
+  .post_category_city a {
+    margin-left: 10px;
+    text-transform: none;
+  }
