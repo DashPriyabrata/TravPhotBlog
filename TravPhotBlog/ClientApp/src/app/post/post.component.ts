@@ -36,7 +36,7 @@ export class PostComponent implements OnInit, AfterViewInit {
   private author: string;
 
   constructor(private route: ActivatedRoute, private blogInfoService: BlogInfoService, private blogContentService: BlogContentService, private blogTagService: BlogTagService,
-    private metaTagService: Meta, private seoService: SeoService, private imgService: ImageService) {
+    private seoService: SeoService, private imgService: ImageService) {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.blogId = params.get('blogId');
     });
