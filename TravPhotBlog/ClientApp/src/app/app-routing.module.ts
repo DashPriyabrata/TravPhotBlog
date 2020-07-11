@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
-import { CountryComponent } from './places/components/country/country.component';
+import { PlacesComponent } from './places/places.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
   { path: 'post/:navUrl/:blogId', component: PostComponent },
-  { path: 'places/:countryName', component: CountryComponent }
+  { path: 'places/:type/:placeName', component: PlacesComponent }
   //{
   //  path: '',
   //  redirectTo: '/home',

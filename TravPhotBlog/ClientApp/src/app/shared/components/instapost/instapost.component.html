@@ -5,13 +5,13 @@
 
     <owl-carousel-o id="first" [options]="customOptions">
       <ng-container *ngFor="let post of instaPosts">
-        <ng-template carouselSlide [id]="post.Id" [width]="(post.Images.Standard_Resolution.Width)/1.5">
-          <a class="ig-item" style="width:100%;" [href]="post.Link" target="_blank">
-            <img [src]="post.Images.Standard_Resolution.Url" [alt]="(post.Location != null) ? post.Location.Name : ''" style="display:block; object-fit: cover; height: 300px;">
+        <ng-template carouselSlide [id]="post.Id" [width]="415" *ngIf="post.Media_Type != 'VIDEO'">
+          <a class="ig-item" style="width:100%;" [href]="post.Permalink" target="_blank">
+            <img [src]="post.Media_Url" [alt]="" style="display:block; object-fit: cover; height: 300px;">
             <span class="ig-likes-comments">
               <span>
                 <i class="fa fa-heart"></i>
-                {{post.Likes.Count}}
+                10
               </span>
 
               <span>

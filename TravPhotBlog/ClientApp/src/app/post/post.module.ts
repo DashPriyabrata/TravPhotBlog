@@ -14,7 +14,6 @@ import { ParentIdPipe } from '../shared/pipes/parent-id.pipe';
     FormsModule,
     ReactiveFormsModule,
     NgxPageScrollModule
-    //PostRoutingModule
   ]
 })
 export class PostModule { }

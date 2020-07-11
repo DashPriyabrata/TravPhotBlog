@@ -10,20 +10,22 @@ interface Meta {
   Error_Message: string;
 }
 
-export interface InstaPost {
+export class InstaPost {
   Id: string;
-  User: User;
-  Images: Images;
-  Created_Time: string;
-  Caption: Caption;
-  User_Has_Liked: boolean;
-  Likes: Likes;
-  Tags: string[];
-  Filter: string;
-  Type: string;
-  Link: string;
-  Location?: Location;
-  Attribution?: any;
+  Media_Url: string;
+  Caption: string;
+  Media_Type: string;
+  Timestamp: Date;
+  Permalink: string;
+  Thumbnail_Url: string;
+  //User_Has_Liked: boolean;
+  //Likes: Likes;
+  //Tags: string[];
+  //Filter: string;
+  //Type: string;
+  //Link: string;
+  //Location?: Location;
+  //Attribution?: any;
   //constructor(
   //  public Id: number,
   //  public Standard_Resolution: ImageDetails,

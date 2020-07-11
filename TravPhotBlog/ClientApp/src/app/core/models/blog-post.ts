@@ -5,6 +5,7 @@ export class BlogPost {
   public Title: string;
   public TitleImage: string;
   public PostDate: Date;
+  public Summary: string;
   public City: string;
   public Country: string;
   public IsActive: boolean;
@@ -17,6 +18,7 @@ export class BlogPost {
   public BlogTagId: number;
   public NavUrlString: string;
   public ReadingTime: string;
+  public UpdateDate: Date;
   //Handle MySQL returning related property in lower case.
   public blogger: Blogger;
 }

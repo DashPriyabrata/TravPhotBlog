@@ -40,7 +40,7 @@ export class InstaPostComponent implements OnInit {
 
   ngOnInit() {
     this.socialService.getInstagramRecentMedia().subscribe((res) => {
-      this.instaPosts = res.Data;
+      this.instaPosts = res;
     });
   }
 }

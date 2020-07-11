@@ -24,7 +24,7 @@
 
         <div class="sayit_meta_cont">
           <div class="sayit_post_category">
-            <a href="#">{{post.Country}}</a>
+            <a href="/places/country/{{post.Country}}">{{post.Country}}</a>
           </div>
 
           <span> / </span>
@@ -36,7 +36,7 @@
           <a href="post/{{post.NavUrlString}}/{{post.BlogId}}">{{post.Title}}</a>
         </h4>
 
-        <div class="sayit_excerpt">Proin vehicula odio ac vehicula aliquet. Nullam dolor augue, suscipit eget odio sed, auctor vestibulum urna. Duis sit amet quam vel sem...</div>
+        <div class="sayit_excerpt">{{post.Summary}}</div>
       </div>
     </div>
   </div>

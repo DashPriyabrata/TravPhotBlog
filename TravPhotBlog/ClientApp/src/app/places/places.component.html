@@ -1,0 +1,306 @@
+<!-- Title Block -->
+<div class="sayit_title_container row sayit_js_height sayit_js_bg_image sayit_block_with_fimage" [attr.data-src]="placeImage" data-height="600">
+  <div class="sayit_overlay sayit_fimage_overlay_type_light"></div>
+
+  <div class="sayit_title_wrapper col push-middle">
+    <h1 class="sayit_post_title">{{placeName}}</h1>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="sayit_container content_box_wide sayit_no_sidebar">
+  <div class="row sayit_no_sidebar">
+    <div class="col col-12 sayit_content content_box_bg_color_off">
+      <div class="sayit_tiny">
+        <!-- Widget Blog Listing -->
+        <div class="sayit_fullwidth_block">
+          <div class="sayit_pr_60 sayit_pl_60">
+            <div class="sayit_blog_listing_widget">
+              <div class="sayit_widget_container">
+                <div class="sayit_packery_blog_listing_cont sayit_packery_blog_listing_8755" *ngFor="let page of paginationFakeArray; let i = index">
+
+                  <!-- Item 1 -->
+                  <div class="sayit_blog_item item_1" *ngIf="searchedBlogs[i*8] != null">
+                    <div class="sayit_blog_item_wrapper">
+                      <a href="post/{{searchedBlogs[i*8].NavUrlString}}/{{searchedBlogs[i*8].BlogId}}">
+                        <img src="{{searchedBlogs[i*8].TitleImage}}?width=960&height=960" alt="{{searchedBlogs[i*8].TitleImage.split('/').pop().split('.')[0]}}" />
+                        <div class="sayit_overlay"></div>
+                        <div class="sayit_bottom_overlay"></div>
+
+                        <div class="sayit_post_content_cont">
+                          <div class="sayit_post_categories">
+                            <span class="sayit_cat">{{searchedBlogs[i*8].City}}</span>
+                          </div>
+
+                          <h4 class="sayit_post_title">{{searchedBlogs[i*8].Title}}</h4>
+
+                          <div class="sayit_post_excerpt">
+                            {{searchedBlogs[i*8].Summary}}
+                          </div>
+
+                          <div class="sayit_post_date_cont">
+                            <div class="sayit_post_date">{{searchedBlogs[i*8].PostDate | date: 'longDate'}}</div>
+
+                            <div class="sayit_post_comments">
+                              <i class="fa fa-book fa-fw"></i>&nbsp;<i class="fa fa-clock-o"></i>
+                              {{searchedBlogs[i*8].ReadingTime}}
+                            </div>
+
+                            <div class="clear"></div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Item 2 -->
+                  <div class="sayit_blog_item item_2" *ngIf="searchedBlogs[i*8+1] != null">
+                    <div class="sayit_blog_item_wrapper">
+                      <a href="post/{{searchedBlogs[i*8+1].NavUrlString}}/{{searchedBlogs[i*8+1].BlogId}}">
+                        <img src="{{searchedBlogs[i*8+1].TitleImage}}?width=960&height=480" alt="{{searchedBlogs[i*8+1].TitleImage.split('/').pop().split('.')[0]}}" />
+                        <div class="sayit_overlay"></div>
+                        <div class="sayit_bottom_overlay"></div>
+
+                        <div class="sayit_post_content_cont">
+                          <div class="sayit_post_categories">
+                            <span class="sayit_cat">{{searchedBlogs[i*8+1].City}}</span>
+                          </div>
+
+                          <h4 class="sayit_post_title">{{searchedBlogs[i*8+1].Title}}</h4>
+
+                          <div class="sayit_post_excerpt">
+                            {{searchedBlogs[i*8+1].Summary}}
+                          </div>
+
+                          <div class="sayit_post_date_cont">
+                            <div class="sayit_post_date">{{searchedBlogs[i*8+1].PostDate | date: 'longDate'}}</div>
+
+                            <div class="sayit_post_comments">
+                              <i class="fa fa-book fa-fw"></i>&nbsp;<i class="fa fa-clock-o"></i>
+                              {{searchedBlogs[i*8+1].ReadingTime}}
+                            </div>
+
+                            <div class="clear"></div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Item 3 -->
+                  <div class="sayit_blog_item item_3" *ngIf="searchedBlogs[i*8+2] != null">
+                    <div class="sayit_blog_item_wrapper">
+                      <a href="post/{{searchedBlogs[i*8+2].NavUrlString}}/{{searchedBlogs[i*8+2].BlogId}}">
+                        <img src="{{searchedBlogs[i*8+2].TitleImage}}?width=480&height=480" alt="{{searchedBlogs[i*8+2].TitleImage.split('/').pop().split('.')[0]}}" />
+                        <div class="sayit_overlay"></div>
+                        <div class="sayit_bottom_overlay"></div>
+
+                        <div class="sayit_post_content_cont">
+                          <div class="sayit_post_categories">
+                            <span class="sayit_cat">{{searchedBlogs[i*8+2].City}}</span>
+                          </div>
+
+                          <h4 class="sayit_post_title">{{searchedBlogs[i*8+2].Title}}</h4>
+
+                          <div class="sayit_post_excerpt">
+                            {{searchedBlogs[i*8+2].Summary}}
+                          </div>
+
+                          <div class="sayit_post_date_cont">
+                            <div class="sayit_post_date">{{searchedBlogs[i*8+2].PostDate | date: 'longDate'}}</div>
+
+                            <div class="sayit_post_comments">
+                              <i class="fa fa-book fa-fw"></i>&nbsp;<i class="fa fa-clock-o"></i>
+                              {{searchedBlogs[i*8+2].ReadingTime}}
+                            </div>
+
+                            <div class="clear"></div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Item 4 -->
+                  <div class="sayit_blog_item item_4" *ngIf="searchedBlogs[i*8+3] != null">
+                    <div class="sayit_blog_item_wrapper">
+                      <a href="post/{{searchedBlogs[i*8+3].NavUrlString}}/{{searchedBlogs[i*8+3].BlogId}}">
+                        <img src="{{searchedBlogs[i*8+3].TitleImage}}?width=480&height=480" alt="{{searchedBlogs[i*8+3].TitleImage.split('/').pop().split('.')[0]}}" />
+                        <div class="sayit_overlay"></div>
+                        <div class="sayit_bottom_overlay"></div>
+
+                        <div class="sayit_post_content_cont">
+                          <div class="sayit_post_categories">
+                            <span class="sayit_cat">{{searchedBlogs[i*8+3].City}}</span>
+                          </div>
+
+                          <h4 class="sayit_post_title">{{searchedBlogs[i*8+3].Title}}</h4>
+
+                          <div class="sayit_post_excerpt">
+                            {{searchedBlogs[i*8+3].Summary}}
+                          </div>
+
+                          <div class="sayit_post_date_cont">
+                            <div class="sayit_post_date">{{searchedBlogs[i*8+3].PostDate | date: 'longDate'}}</div>
+
+                            <div class="sayit_post_comments">
+                              <i class="fa fa-book fa-fw"></i>&nbsp;<i class="fa fa-clock-o"></i>
+                              {{searchedBlogs[i*8+3].ReadingTime}}
+                            </div>
+
+                            <div class="clear"></div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Item 5 -->
+                  <div class="sayit_blog_item item_5" *ngIf="searchedBlogs[i*8+4] != null">
+                    <div class="sayit_blog_item_wrapper">
+                      <a href="post/{{searchedBlogs[i*8+4].NavUrlString}}/{{searchedBlogs[i*8+4].BlogId}}">
+                        <img src="{{searchedBlogs[i*8+4].TitleImage}}?width=960&height=480" alt="{{searchedBlogs[i*8+4].TitleImage.split('/').pop().split('.')[0]}}" />
+                        <div class="sayit_overlay"></div>
+                        <div class="sayit_bottom_overlay"></div>
+
+                        <div class="sayit_post_content_cont">
+                          <div class="sayit_post_categories">
+                            <span class="sayit_cat">{{searchedBlogs[i*8+4].City}}</span>
+                          </div>
+
+                          <h4 class="sayit_post_title">{{searchedBlogs[i*8+4].Title}}</h4>
+
+                          <div class="sayit_post_excerpt">
+                            {{searchedBlogs[i*8+4].Summary}}
+                          </div>
+
+                          <div class="sayit_post_date_cont">
+                            <div class="sayit_post_date">{{searchedBlogs[i*8+4].PostDate | date: 'longDate'}}</div>
+
+                            <div class="sayit_post_comments">
+                              <i class="fa fa-book fa-fw"></i>&nbsp;<i class="fa fa-clock-o"></i>
+                              {{searchedBlogs[i*8+4].ReadingTime}}
+                            </div>
+
+                            <div class="clear"></div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Item 6 -->
+                  <div class="sayit_blog_item item_6" *ngIf="searchedBlogs[i*8+5] != null">
+                    <div class="sayit_blog_item_wrapper">
+                      <a href="post/{{searchedBlogs[i*8+5].NavUrlString}}/{{searchedBlogs[i*8+5].BlogId}}">
+                        <img src="{{searchedBlogs[i*8+5].TitleImage}}?width=960&height=960" alt="{{searchedBlogs[i*8+5].TitleImage.split('/').pop().split('.')[0]}}" />
+                        <div class="sayit_overlay"></div>
+                        <div class="sayit_bottom_overlay"></div>
+
+                        <div class="sayit_post_content_cont">
+                          <div class="sayit_post_categories">
+                            <span class="sayit_cat">{{searchedBlogs[i*8+5].City}}</span>
+                          </div>
+
+                          <h4 class="sayit_post_title">{{searchedBlogs[i*8+5].Title}}</h4>
+
+                          <div class="sayit_post_excerpt">
+                            {{searchedBlogs[i*8+5].Summary}}
+                          </div>
+
+                          <div class="sayit_post_date_cont">
+                            <div class="sayit_post_date">{{searchedBlogs[i*8+5].PostDate | date: 'longDate'}}</div>
+
+                            <div class="sayit_post_comments">
+                              <i class="fa fa-book fa-fw"></i>&nbsp;<i class="fa fa-clock-o"></i>
+                              {{searchedBlogs[i*8+5].ReadingTime}}
+                            </div>
+
+                            <div class="clear"></div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Item 7 -->
+                  <div class="sayit_blog_item item_7" *ngIf="searchedBlogs[i*8+6] != null">
+                    <div class="sayit_blog_item_wrapper">
+                      <a href="post/{{searchedBlogs[i*8+6].NavUrlString}}/{{searchedBlogs[i*8+6].BlogId}}">
+                        <img src="{{searchedBlogs[i*8+6].TitleImage}}?width=480&height=480" alt="{{searchedBlogs[i*8+6].TitleImage.split('/').pop().split('.')[0]}}" />
+                        <div class="sayit_overlay"></div>
+                        <div class="sayit_bottom_overlay"></div>
+
+                        <div class="sayit_post_content_cont">
+                          <div class="sayit_post_categories">
+                            <span class="sayit_cat">{{searchedBlogs[i*8+6].City}}</span>
+                          </div>
+
+                          <h4 class="sayit_post_title">{{searchedBlogs[i*8+6].Title}}</h4>
+
+                          <div class="sayit_post_excerpt">
+                            {{searchedBlogs[i*8+6].Summary}}
+                          </div>
+
+                          <div class="sayit_post_date_cont">
+                            <div class="sayit_post_date">{{searchedBlogs[i*8+6].PostDate | date: 'longDate'}}</div>
+
+                            <div class="sayit_post_comments">
+                              <i class="fa fa-book fa-fw"></i>&nbsp;<i class="fa fa-clock-o"></i>
+                              {{searchedBlogs[i*8+6].ReadingTime}}
+                            </div>
+
+                            <div class="clear"></div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Item 8 -->
+                  <div class="sayit_blog_item item_8" *ngIf="searchedBlogs[i*8+7] != null">
+                    <div class="sayit_blog_item_wrapper">
+                      <a href="post/{{searchedBlogs[i*8+7].NavUrlString}}/{{searchedBlogs[i*8+7].BlogId}}">
+                        <img src="{{searchedBlogs[i*8+7].TitleImage}}?width=480&height=480" alt="{{searchedBlogs[i*8+7].TitleImage.split('/').pop().split('.')[0]}}" />
+                        <div class="sayit_overlay"></div>
+                        <div class="sayit_bottom_overlay"></div>
+
+                        <div class="sayit_post_content_cont">
+                          <div class="sayit_post_categories">
+                            <span class="sayit_cat">{{searchedBlogs[i*8+7].City}}</span>
+                          </div>
+
+                          <h4 class="sayit_post_title">{{searchedBlogs[i*8+7].Title}}</h4>
+
+                          <div class="sayit_post_excerpt">
+                            {{searchedBlogs[i*8+7].Summary}}
+                          </div>
+
+                          <div class="sayit_post_date_cont">
+                            <div class="sayit_post_date">{{searchedBlogs[i*8+7].PostDate | date: 'longDate'}}</div>
+
+                            <div class="sayit_post_comments">
+                              <i class="fa fa-book fa-fw"></i>&nbsp;<i class="fa fa-clock-o"></i>
+                              {{searchedBlogs[i*8+7].ReadingTime}}
+                            </div>
+
+                            <div class="clear"></div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="sayit_load_more blog_view_type_packery" *ngIf="paginationCount > 0">
+                  <a class="sayit_load_more_button packery_blog_trigger" href="javascript:void(0)" (click)="onLoadMore()">Load More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
