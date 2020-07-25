@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-
+import * as $ from 'jquery';
 import { ImageService } from '../core/services/image.service';
 import { SearchService } from '../core/services/search.service';
 import { BlogPost } from '../core/models/blog-post';
@@ -69,5 +69,16 @@ export class PlacesComponent implements OnInit {
     else {
       this.paginationCount = 0;
     }
+  }
+
+  ngAfterViewInit() {
+    $(document).ready(function () {
+      $(".sayit_title_container").each(function () {
+        $(this).css('background-image', 'url(' + $(this).attr('data-src') + ')');
+      });
+      $(".sayit_js_height").each(function () {
+        $(this).css('height', $(this).attr('data-height'));
+      });
+    });
   }
 }

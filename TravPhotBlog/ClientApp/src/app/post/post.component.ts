@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import * as $ from 'jquery';
-import { Meta } from '@angular/platform-browser';
 import { ImageService } from '../core/services/image.service';
 import { BlogInfoService } from '../core/services/blog-info.service';
 import { BlogContentService } from '../core/services/blog-content.service';
@@ -106,18 +105,23 @@ export class PostComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    $(".sayit_title_container").each(function () {
-      $(this).css('background-image', 'url(' + $(this).attr('data-src') + ')');
-    });
+    $(document).ready(function () {
+      $(".sayit_title_container").each(function () {
+        $(this).css('background-image', 'url(' + $(this).attr('data-src') + ')');
+      });
+      $(".sayit_js_height").each(function () {
+        $(this).css('height', $(this).attr('data-height'));
+      });
 
-    //Facebook comment plugin script.
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=2099597870257585';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+      //Facebook comment plugin script.
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=2099597870257585';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    });
   }
 
   public goToByScroll(id: string) {
