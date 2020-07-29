@@ -17,6 +17,7 @@ import { PlacesModule } from './places/places.module';
 import { LoaderService } from './core/services/loader.service';
 import { LoaderInterceptor } from './core/interceptors/loader-interceptor';
 import { MyLoaderComponent } from './shared/components/my-loader/my-loader.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MyLoaderComponent } from './shared/components/my-loader/my-loader.compo
     //NavigationComponent,
     InstaPostComponent,
     SafePipe,
-    MyLoaderComponent
+    MyLoaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,6 @@ import { MyLoaderComponent } from './shared/components/my-loader/my-loader.compo
     LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent, InstaPostComponent]
+  bootstrap: [AppComponent, InstaPostComponent, HeaderComponent]
 })
 export class AppModule { }

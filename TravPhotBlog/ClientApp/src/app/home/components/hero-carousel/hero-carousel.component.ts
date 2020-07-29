@@ -23,8 +23,10 @@ export class HeroCarouselComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    $(".sayit_slider_item_wrapper").each(function () {
-      $(this).css('background-image', 'url(' + $(this).attr('data-src') + ')');
+    $(document).ready(function () {
+      $(".sayit_slider_item_wrapper").each(function () {
+        $(this).css('background-image', 'url(' + $(this).attr('data-src') + ')');
+      });
     });
   }
 }
