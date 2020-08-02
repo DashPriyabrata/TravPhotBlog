@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
           }, 100, menu_item);
         }
       });
-      
+
       // Header Mobile Menu & Click Operations
       jQuery('.sayit_menu_mobile_trigger').on('click', function () {
         jQuery(this).toggleClass('active');
@@ -105,7 +105,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  isActive(viewLocation: string) {
+  isActiveAncestor(viewLocation: string) {
     var urlPath = this.location.path();
 
     //Check if not homepage
@@ -122,6 +122,17 @@ export class HeaderComponent implements OnInit {
       return true;
     }
     //It's homepage but non-home item called the method
+    return false;
+  }
+
+  isActiveItem(pageName: string) {
+    var urlPath = this.location.path();
+
+    if (urlPath) {
+      if (pageName) {
+        return urlPath.endsWith(pageName);
+      }
+    }
     return false;
   }
 }

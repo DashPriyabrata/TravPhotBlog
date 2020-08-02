@@ -24,19 +24,19 @@
         <div class="sayit_menu_inner">
           <ul class="sayit_menu sayit_header_menu">
             <!-- Home -->
-            <li [ngClass]="{'menu-item-has-children menu-item': true, 'current-menu-ancestor': isActive('')}">
+            <li [ngClass]="{'menu-item-has-children menu-item': true, 'current-menu-ancestor': isActiveAncestor('')}">
               <a href="/">Home</a>
             </li>
 
             <!-- Places -->
-            <li [ngClass]="{'menu-item-has-children menu-item': true, 'current-menu-ancestor': isActive('/places')}">
+            <li [ngClass]="{'menu-item-has-children menu-item': true, 'current-menu-ancestor': isActiveAncestor('/places')}">
               <a href="javascript:void(0)">Places</a>
 
               <ul class="sub-menu">
-                <li class="menu-item"><a href="/places/country/Indonesia">Indonesia</a></li>
-                <li class="menu-item"><a href="/places/country/Laos">Laos</a></li>
-                <li class="menu-item"><a href="/places/country/Thailand">Thailand</a></li>
-                <li class="menu-item"><a href="/places/country/China">China</a></li>
+                <li [ngClass]="{'menu-item': true, 'current-menu-item': isActiveItem('/Indonesia')}"><a href="/places/country/Indonesia">Indonesia</a></li>
+                <li [ngClass]="{'menu-item': true, 'current-menu-item': isActiveItem('/Laos')}"><a href="/places/country/Laos">Laos</a></li>
+                <li [ngClass]="{'menu-item': true, 'current-menu-item': isActiveItem('/Thailand')}"><a href="/places/country/Thailand">Thailand</a></li>
+                <li [ngClass]="{'menu-item': true, 'current-menu-item': isActiveItem('/China')}"><a href="/places/country/China">China</a></li>
               </ul>
             </li>
 
@@ -83,19 +83,19 @@
   <div class="sayit_menu_mobile">
     <ul class="sayit_menu">
       <!-- Home -->
-      <li class="menu-item-has-children menu-item current-menu-ancestor">
+      <li [ngClass]="{'menu-item-has-children menu-item': true, 'current-menu-ancestor': isActiveAncestor('')}">
         <a href="/">Home</a>
       </li>
 
       <!-- Places -->
-      <li class="menu-item-has-children menu-item current-menu-ancestor">
+      <li [ngClass]="{'menu-item-has-children menu-item': true, 'current-menu-ancestor': isActiveAncestor('/places')}">
         <a href="javascript:void(0)">Places</a>
 
         <ul class="sub-menu">
-          <li class="menu-item"><a href="/places/country/Indonesia">Indonesia</a></li>
-          <li class="menu-item"><a href="/places/country/Laos">Laos</a></li>
-          <li class="menu-item"><a href="/places/country/Thailand">Thailand</a></li>
-          <li class="menu-item"><a href="/places/country/China">China</a></li>
+          <li [ngClass]="{'menu-item': true, 'current-menu-item': isActiveItem('/Indonesia')}"><a href="/places/country/Indonesia">Indonesia</a></li>
+          <li [ngClass]="{'menu-item': true, 'current-menu-item': isActiveItem('/Laos')}"><a href="/places/country/Laos">Laos</a></li>
+          <li [ngClass]="{'menu-item': true, 'current-menu-item': isActiveItem('/Thailand')}"><a href="/places/country/Thailand">Thailand</a></li>
+          <li [ngClass]="{'menu-item': true, 'current-menu-item': isActiveItem('/China')}"><a href="/places/country/China">China</a></li>
         </ul>
       </li>
 
