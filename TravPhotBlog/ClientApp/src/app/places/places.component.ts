@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import * as $ from 'jquery';
 import { ImageService } from '../core/services/image.service';
@@ -10,7 +10,7 @@ import { BlogPost } from '../core/models/blog-post';
   templateUrl: './places.component.html',
   styleUrls: ['./places.component.css']
 })
-export class PlacesComponent implements OnInit {
+export class PlacesComponent implements OnInit, AfterViewInit {
   placeName: string;
   placeType: string;
   placeImage: string;

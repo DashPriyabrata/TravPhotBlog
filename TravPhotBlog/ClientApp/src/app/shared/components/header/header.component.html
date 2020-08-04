@@ -24,7 +24,7 @@
         <div class="sayit_menu_inner">
           <ul class="sayit_menu sayit_header_menu">
             <!-- Home -->
-            <li [ngClass]="{'menu-item-has-children menu-item': true, 'current-menu-ancestor': isActiveAncestor('')}">
+            <li [ngClass]="{'menu-item': true, 'current-menu-ancestor': isActiveAncestor('')}">
               <a href="/">Home</a>
             </li>
 
@@ -40,18 +40,15 @@
               </ul>
             </li>
 
-            <!-- Pages -->
-            <li class="menu-item-has-children menu-item">
-              <a href="javascript:void(0)">Pages</a>
-
-              <ul class="sub-menu">
-                <li class="menu-item"><a href="typography.html">Typography</a></li>
-                <li class="menu-item"><a href="coming_soon.html">Coming Soon</a></li>
-              </ul>
+            <!-- Photos -->
+            <li [ngClass]="{'menu-item': true, 'current-menu-ancestor': isActiveAncestor('/photos')}">
+              <a href="/photos">Photos</a>
             </li>
 
             <!-- Contacts -->
-            <li class="menu-item"><a href="contacts.html">Contacts</a></li>
+            <li [ngClass]="{'menu-item': true, 'current-menu-ancestor': isActiveAncestor('/contact')}">
+              <a href="/contact">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -83,7 +80,7 @@
   <div class="sayit_menu_mobile">
     <ul class="sayit_menu">
       <!-- Home -->
-      <li [ngClass]="{'menu-item-has-children menu-item': true, 'current-menu-ancestor': isActiveAncestor('')}">
+      <li [ngClass]="{'menu-item': true, 'current-menu-ancestor': isActiveAncestor('')}">
         <a href="/">Home</a>
       </li>
 
@@ -99,18 +96,15 @@
         </ul>
       </li>
 
-      <!-- Pages -->
-      <li class="menu-item-has-children menu-item">
-        <a href="javascript:void(0)">Pages</a>
-
-        <ul class="sub-menu">
-          <li class="menu-item"><a href="typography.html">Typography</a></li>
-          <li class="menu-item"><a href="coming_soon.html">Coming Soon</a></li>
-        </ul>
+      <!-- Photos -->
+      <li [ngClass]="{'menu-item': true, 'current-menu-ancestor': isActiveAncestor('/photos')}">
+        <a href="/photos">Photos</a>
       </li>
 
       <!-- Contacts -->
-      <li class="menu-item"><a href="contacts.html">Contacts</a></li>
+      <li [ngClass]="{'menu-item': true, 'current-menu-ancestor': isActiveAncestor('/contact')}">
+        <a href="/contact">Contacts</a>
+      </li>
     </ul>
   </div>
 </header>
