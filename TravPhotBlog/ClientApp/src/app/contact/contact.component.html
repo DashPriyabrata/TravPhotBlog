@@ -23,9 +23,9 @@
           </div>
         </div>
 
-        <p>Praesent hendrerit cursus turpis, in mattis turpis. Suspendisse sagittis luctus leo at scelerisque. Maecenas vel elementum nulla. Ut aliquam tellus at massa aliquam, id pulvinar odio interdum. Phasellus vitae ex a massa congue imperdiet. Quisque consectetur est tortor, sed mattis.</p>
+        <p>Got something to ask/share over a PM? You are more than welcome to provide a feedback as well.</p>
 
-        <p class="sayit_mb_40">Ut tincidunt justo mauris, et rutrum magna convallis id. Duis est enim, finibus ac nisi eu, rhoncus commodo ante. Nulla suscipit faucibus blandit. Pellentesque sodales est eu vestibulum venenatis. In risus sem, tincidunt et odio quis, tempus accumsan tortor.</p>
+        <p class="sayit_mb_40">Fill the form below and connect with me by sending your message. If you want to share an image/video/file with me, you can do so when I reply you back.</p>
 
         <!-- Form Widget -->
         <div class="sayit_form_widget">
@@ -56,14 +56,13 @@
           </div>
         </div>
 
-        <p class="sayit_mb_40">Nunc laoreet nunc ac vulputate tincidunt. Cras pellentesque eros justo, sed mattis quam dignissim ut. Pellentesque sed ipsum congue, laoreet erat vitae, dignissim metus. Nulla et commodo velit. Mauris efficitur turpis sit amet sem accumsan iaculis. Donec efficitur ligula eu metus.</p>
+        <p id="socialsSubtitle" class="sayit_mb_40">You can connect & shoot me a message on all these platforms. Check out my Instagram & Pinterest to see HD photos of my trips.</p>
 
         <div class="sayit_social_icons_widget">
           <div class="sayit_widget_container sayit_text_align_center sayit_mb_70">
             <a class="sayit_social_icon" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a class="sayit_social_icon" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a class="sayit_social_icon" href="#" target="_blank"><i class="fa fa-instagram"></i></a>
             <a class="sayit_social_icon" href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-            <a class="sayit_social_icon" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
           </div>
         </div>
 
@@ -72,8 +71,8 @@
           <div class="col col-8 push-center">
             <div class="sayit_widget_title">
               <div class="sayit_widget_container sayit_text_align_center sayit_mb_52">
-                <h2 class="sayit_element_heading sayit_view_type_1">See My Latest Trips</h2>
-                <p class="sayit_subtitle_cont">Nulla suscipit faucibus blandit. Pellentesque sodales est eu vestibulum venenatis in risus sem.</p>
+                <h2 class="sayit_element_heading sayit_view_type_1">See My Trending Trips</h2>
+                <p class="sayit_subtitle_cont">Trips highly liked by site visitors. On mobile screen, tap on the tile to flip and see the link to post.</p>
               </div>
             </div>
           </div>
@@ -87,21 +86,21 @@
                 <div class="sayit_flipbox_wrapper">
                   <div class="sayit_flip_box">
                     <!-- Front Container -->
-                    <div class="sayit_flipbox_front sayit_js_bg_image" data-src="img/clipart/flip-2.jpg">
+                    <div class="sayit_flipbox_front sayit_js_bg_image" [attr.data-src]="trendingPosts[0].TitleImage">
                       <div class="sayit_front_title_cont">
-                        <h2 class="sayit_front_title">India</h2>
+                        <h2 class="sayit_front_title">{{trendingPosts[0].Country}}</h2>
                       </div>
 
                       <div class="sayit_front_description_cont">
-                        <p class="sayit_front_description">Ut aliquam tellus at massa aliquam, id pulvinar odio interdum. Phasellus vitae ex a massa congue</p>
+                        <p class="sayit_front_description">{{trendingPosts[0].Summary}}</p>
                       </div>
                     </div>
 
                     <!-- Back Container -->
-                    <div class="sayit_flipbox_back sayit_js_bg_image" data-src="img/clipart/places/india/india-3.jpg">
+                    <div class="sayit_flipbox_back sayit_js_bg_image" [attr.data-src]="country1Image">
                       <div class="sayit_flipbox_back_inner">
                         <div class="sayit_back_button_wrapper">
-                          <a class="sayit_back_button" href="places_india.html">See The Trip</a>
+                          <a class="sayit_back_button" href="/post/{{trendingPosts[0].NavUrlString}}/{{trendingPosts[0].BlogId}}">See The Trip</a>
                         </div>
                       </div>
                     </div>
@@ -118,21 +117,21 @@
                 <div class="sayit_flipbox_wrapper">
                   <div class="sayit_flip_box">
                     <!-- Front Container -->
-                    <div class="sayit_flipbox_front sayit_js_bg_image" data-src="img/clipart/flip-3.jpg">
+                    <div class="sayit_flipbox_front sayit_js_bg_image" [attr.data-src]="trendingPosts[1].TitleImage">
                       <div class="sayit_front_title_cont">
-                        <h2 class="sayit_front_title">France</h2>
+                        <h2 class="sayit_front_title">{{trendingPosts[1].Country}}</h2>
                       </div>
 
                       <div class="sayit_front_description_cont">
-                        <p class="sayit_front_description">Quisque consectetur est tortor, sed mattis velit luctus sit amet. Etiam eu orci nec orci</p>
+                        <p class="sayit_front_description">{{trendingPosts[1].Summary}}</p>
                       </div>
                     </div>
 
                     <!-- Back Container -->
-                    <div class="sayit_flipbox_back sayit_js_bg_image" data-src="img/clipart/places/france/france-20.jpg">
+                    <div class="sayit_flipbox_back sayit_js_bg_image" [attr.data-src]="country2Image">
                       <div class="sayit_flipbox_back_inner">
                         <div class="sayit_back_button_wrapper">
-                          <a class="sayit_back_button" href="places_france.html">See The Trip</a>
+                          <a class="sayit_back_button" href="/post/{{trendingPosts[1].NavUrlString}}/{{trendingPosts[1].BlogId}}">See The Trip</a>
                         </div>
                       </div>
                     </div>
