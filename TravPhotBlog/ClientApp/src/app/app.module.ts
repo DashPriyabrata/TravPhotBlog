@@ -14,6 +14,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 import { HomeModule } from './home/home.module';
 import { PostModule } from './post/post.module';
 import { PlacesModule } from './places/places.module';
+import { ContactModule } from './contact/contact.module';
 import { LoaderService } from './core/services/loader.service';
 import { LoaderInterceptor } from './core/interceptors/loader-interceptor';
 import { MyLoaderComponent } from './shared/components/my-loader/my-loader.component';
@@ -38,7 +39,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
     NgxPopper,
     HomeModule,
     PostModule,
-    PlacesModule
+    PlacesModule,
+    ContactModule
   ],
   providers: [
     LoaderService,

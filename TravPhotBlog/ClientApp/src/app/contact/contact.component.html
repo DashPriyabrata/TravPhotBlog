@@ -31,14 +31,20 @@
         <div class="sayit_form_widget">
           <div class="sayit_widget_container">
             <div class="sayit_form_wrapper">
-              <form name="contact_form" id="contact_form">
+              <form name="contact_form" id="contact_form" [formGroup]="contactForm" ngNativeValidate (ngSubmit)='onFormSubmit(name.value, email.value, message.value)'
+                    *ngIf="!status">
                 <p>
-                  <input type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Name*" form="contact_form">
-                  <input type="email" name="your-email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Email*" form="contact_form">
-                  <textarea name="your-message" cols="40" rows="10" aria-invalid="false" placeholder="Message" form="contact_form"></textarea>
-                  <input type="submit" value="Send Message" form="contact_form">
+                  <input type="text" name="name" value="" size="50" placeholder="Name*" required formControlName="name">
+                  <input type="email" name="email" value="" size="40" placeholder="Email*" required formControlName="email">
+                  <textarea name="message" cols="40" rows="10" placeholder="Message" required minlength="60" maxlength="500" formControlName="message"></textarea>
+                  <input name="submit" type="submit" id="submit" value="Send Message">
                 </p>
               </form>
+              <div class="col col-12" *ngIf="status">
+                <p class="alert">
+                  <strong>Your message is submitted!</strong> Please click <a href="javascript:void(0)" (click)="toggleForm()">here</a> to submit another message!
+                </p>
+              </div>
             </div>
           </div>
         </div>
