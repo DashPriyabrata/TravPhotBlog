@@ -13,7 +13,10 @@ export class ContactUsService {
   constructor(private httpClient: HttpClient) { }
 
   public postContactUsSubmission(submission: ContactUs) {
-    debugger;
     return this.httpClient.post<boolean>(this.contactUsApiURL + "/Add", submission);
+  }
+
+  public getAllContactUsSubmission() {
+    return this.httpClient.get<ContactUs[]>(this.contactUsApiURL + "/All");
   }
 }
