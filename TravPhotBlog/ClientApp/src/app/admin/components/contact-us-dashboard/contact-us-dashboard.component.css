@@ -1,0 +1,15 @@
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.bg-color {
+  background-color: yellow;
+}
+
+.read-btn {
+  height: 100%;
+}

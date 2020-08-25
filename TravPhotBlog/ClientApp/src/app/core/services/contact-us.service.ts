@@ -19,4 +19,8 @@ export class ContactUsService {
   public getAllContactUsSubmission() {
     return this.httpClient.get<ContactUs[]>(this.contactUsApiURL + "/All");
   }
+
+  public updateAdminRead(subId: number) {
+    return this.httpClient.patch<boolean>(this.contactUsApiURL + "/Update/AdminRead", subId);
+  }
 }

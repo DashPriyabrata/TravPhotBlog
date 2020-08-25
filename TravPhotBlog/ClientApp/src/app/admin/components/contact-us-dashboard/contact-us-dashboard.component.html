@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th style="width: 100px;">Name</th>
+      <th style="width: 180px;">Email</th>
+      <th>Message</th>
+      <th style="width: 90px;">Mark Read</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sub of submissions" [ngClass]="{'bg-color': !sub.IsAdminRead}">
+      <td>{{sub.Name}}</td>
+      <td>{{sub.Email}}</td>
+      <td>{{sub.Message}}</td>
+      <td>
+        <div class="read-btn" *ngIf="!sub.IsAdminRead">
+          <button (click)="onReadClick(sub.Id)">Read</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
