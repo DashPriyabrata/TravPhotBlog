@@ -16,6 +16,7 @@ import { PostModule } from './post/post.module';
 import { PlacesModule } from './places/places.module';
 import { ContactModule } from './contact/contact.module';
 import { AdminModule } from './admin/admin.module';
+import { AuthModule } from './auth/auth.module';
 import { LoaderService } from './core/services/loader.service';
 import { LoaderInterceptor } from './core/interceptors/loader-interceptor';
 import { MyLoaderComponent } from './shared/components/my-loader/my-loader.component';
@@ -42,7 +43,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
     PostModule,
     PlacesModule,
     ContactModule,
-    AdminModule
+    AdminModule,
+    AuthModule
   ],
   providers: [
     LoaderService,

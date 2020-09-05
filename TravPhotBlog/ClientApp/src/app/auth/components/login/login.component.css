@@ -1,0 +1,10 @@
+.sayit_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.google-signin {
+  width: 245px;
+}

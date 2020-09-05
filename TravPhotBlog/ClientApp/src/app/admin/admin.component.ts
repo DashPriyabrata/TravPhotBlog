@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as $ from 'jquery';
+import { AuthenticationService } from '../core/services/authentication.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,10 +8,12 @@ import * as $ from 'jquery';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit, AfterViewInit {
+  userName: string;
 
-  constructor() { }
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.userName = this.authService.currentUserValue.name;
   }
 
   ngAfterViewInit() {
@@ -22,5 +25,9 @@ export class AdminComponent implements OnInit, AfterViewInit {
         $(this).css('height', $(this).attr('data-height'));
       });
     });
+  }
+
+  signOut() {
+    this.authService.signOut();
   }
 }
