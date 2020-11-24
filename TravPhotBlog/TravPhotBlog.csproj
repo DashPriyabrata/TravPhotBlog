@@ -35,6 +35,7 @@
   <ItemGroup>
     <Folder Include="ClientApp\src\app\about\components\" />
     <Folder Include="ClientApp\src\app\core\models\" />
+    <Folder Include="ClientApp\src\app\auth\components\" />
     <Folder Include="ClientApp\src\app\home\components\" />
     <Folder Include="ClientApp\src\app\shared\models\" />
     <Folder Include="ClientApp\src\assets\scripts\" />

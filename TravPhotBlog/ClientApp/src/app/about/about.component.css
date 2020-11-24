@@ -1,0 +1,17 @@
+@media only screen and (max-width: 737px) {
+  .sayit_content_cont, .sayit_element_heading {
+    color: white;
+  }
+
+  .sayit_element_heading {
+    padding-top: 1rem;
+  }
+
+  .sayit_content_cont {
+    margin-top: 85px;
+  }
+}
+
+.sayit_content_cont {
+  padding-top: 40px !important;
+}

@@ -21,6 +21,7 @@ import { LoaderService } from './core/services/loader.service';
 import { LoaderInterceptor } from './core/interceptors/loader-interceptor';
 import { MyLoaderComponent } from './shared/components/my-loader/my-loader.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
     InstaPostComponent,
     SafePipe,
     MyLoaderComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,6 @@ import { HeaderComponent } from './shared/components/header/header.component';
     LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent, InstaPostComponent, HeaderComponent]
+  bootstrap: [AppComponent, FooterComponent, HeaderComponent]
 })
 export class AppModule { }

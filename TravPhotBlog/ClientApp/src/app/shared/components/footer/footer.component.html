@@ -1,0 +1,38 @@
+<!-- Footer -->
+<div [ngClass]="{'sayit_footer': true, 'footer-container': !showInstagram}">
+  <!-- Footer Instagram -->
+  <instapost *ngIf="showInstagram"></instapost>
+
+  <!-- Back To Top -->
+  <a class="sayit_back_to_top" href="javascript:void(0)">Top</a>
+
+  <footer id="footer" [ngClass]="{'sayit_footer_type_simple': true, 'footer': !showInstagram}">
+    <div class="row">
+      <div class="col col-12">
+        <div class="row align-middle">
+          <div class="col col-2 sayit_footer_logo_container">
+            <a class="sayit_image_logo sayit_retina" href="/"></a>
+          </div>
+          <div class="col col-4 sayit_footer_menu_container">
+            <p style="margin: 0px;">Copyright &copy; <span id="copyright"></span> - Travel, Photography, Blogging.</p>
+          </div><!-- Copyright end -->
+          <div class="col col-6 sayit_footer_menu_container">
+            <div class="menu-footer-menu-container">
+              <ul class="sayit_footer_menu">
+                <li class="menu-item"><a href="/about">About</a></li>
+                <li class="menu-item"><a href="blog_modern.html">Blog</a></li>
+                <li class="menu-item"><a href="typography.html">Typography</a></li>
+                <li class="menu-item"><a href="contacts.html">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+    var thisYear = new Date().getFullYear();
+    document.getElementById("copyright").innerText = thisYear;
+</script>

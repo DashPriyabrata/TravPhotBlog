@@ -8,6 +8,7 @@ import { PlacesComponent } from './places/places.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './auth/components/login/login.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'places/:type/:placeName', component: PlacesComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'about', component: AboutComponent }
   //{
   //  path: '',
   //  redirectTo: '/home',
