@@ -1,16 +1,16 @@
 <div id="fb-root"></div>
 <!-- Title Block -->
-<div class="sayit_title_container row sayit_js_height sayit_block_with_fimage" [attr.data-src]="blogData.TitleImage" data-height="600">
+<div class="sayit_title_container row sayit_js_height sayit_block_with_fimage" [attr.data-src]="blogData?.TitleImage" data-height="600">
   <div class="sayit_overlay sayit_fimage_overlay_type_light"></div>
 
   <div class="sayit_title_wrapper col push-middle">
     <div class="sayit_post_category_cont">
-      <a href="#">{{blogData.Country}}</a>
+      <a href="#">{{blogData?.Country}}</a>
       /
-      <span class="sayit_post_date">{{blogData.PostDate | date:'longDate'}}</span>
+      <span class="sayit_post_date">{{blogData?.PostDate | date:'longDate'}}</span>
     </div>
 
-    <h1 class="sayit_post_title">{{blogData.Title}}</h1>
+    <h1 class="sayit_post_title">{{blogData?.Title}}</h1>
   </div>
 </div>
 
@@ -22,13 +22,13 @@
       <div class="sayit_tiny">
         <div id="viewer"></div>
 
-        <img class="sayit_mb_10" src="{{postContent.Image_BeforeHighlights}}" alt="" />
+        <img class="sayit_mb_10" src="{{postContent?.Image_BeforeHighlights}}" alt="" />
 
         <p>Praesent risus ex, sagittis quis ligula eget, efficitur aliquet augue. Sed finibus dui a hendrerit sodales. Vivamus ac tortor nec mauris congue malesuada id vel nisi. Suspendisse elementum aliquet diam sed sollicitudin. Aliquam sed risus semper, congue mi nec, euismod eros. Maecenas a magna arcu. Etiam purus metus, accumsan in mi non, rutrum maximus arcu. Cras libero enim, facilisis ut enim id, iaculis semper est. Sed interdum ac sapien ut laoreet. Pellentesque tempor, sem at volutpat dignissim, erat mauris condimentum odio, et sodales lacus erat vulputate erat. Integer sed auctor mi, pharetra venenatis metus. Maecenas nec nulla condimentum, aliquam lorem interdum, facilisis nisl. Nunc lobortis purus lorem, nec commodo tellus bibendum vel. Etiam viverra nunc ex, ut semper mi imperdiet quis.</p>
 
         <p class="sayit_mb_40">Fusce elementum sollicitudin nisi et posuere. Proin laoreet ipsum ac tortor euismod aliquet. Aenean ut semper mi. Quisque finibus, ipsum ut scelerisque rhoncus, ante lacus sollicitudin metus, ac faucibus dui tortor nec erat.</p>
 
-        <img class="sayit_mb_10" src="{{postContent.Image_AfterHighlights}}" alt="" />
+        <img class="sayit_mb_10" src="{{postContent?.Image_AfterHighlights}}" alt="" />
 
         <p class="sayit_mb_40">Maecenas a magna arcu. Etiam purus metus, accumsan in mi non, rutrum maximus arcu. Cras libero enim, facilisis ut enim id, iaculis semper est. Sed interdum ac sapien ut laoreet. Pellentesque tempor, sem at volutpat dignissim, erat mauris condimentum odio, et sodales lacus erat vulputate erat. Integer sed auctor mi, pharetra venenatis metus. Maecenas nec nulla condimentum, aliquam lorem interdum, facilisis nisl. Nunc lobortis purus lorem, nec commodo tellus bibendum vel. Etiam viverra nunc ex, ut semper mi imperdiet quis.</p>
 
@@ -63,23 +63,23 @@
       <!-- About Author Area -->
       <div class="sayit_about_author">
         <div class="sayit_about_author_wrapper">
-          <div class="sayit_author_ava">
-            <img src="assets/imgs/Blogger/Author_{{blogData.blogger.Photo}}" alt="{{blogData.blogger.FirstName}} {{blogData.blogger.LastName}}'s Photo" width="100" height="100">
+          <div class="sayit_author_ava" *ngIf="blogData">
+            <img src="assets/imgs/Blogger/Author_{{blogData?.blogger.Photo}}" alt="{{blogData?.blogger.FirstName}} {{blogData?.blogger.LastName}}'s Photo" width="100" height="100">
           </div>
 
           <div class="sayit_author_cont">
             <h6>
-              <a href="#" title="Posts by {{blogData.blogger.FirstName}} {{blogData.blogger.LastName}}">{{blogData.blogger.FirstName}}</a>
+              <a href="#" title="Posts by {{blogData?.blogger.FirstName}} {{blogData?.blogger.LastName}}">{{blogData?.blogger.FirstName}}</a>
             </h6>
 
-            <p>{{blogData.blogger.Slogan}} - {{blogData.blogger.AboutMe}}.</p>
+            <p>{{blogData?.blogger.Slogan}} - {{blogData?.blogger.AboutMe}}.</p>
           </div>
 
           <div class="sayit_social_icons_widget">
             <div class="sayit_widget_container">
-              <a class="blog_social_icon" href="{{blogData.blogger.Facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
-              <a class="blog_social_icon" href="{{blogData.blogger.Twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
-              <a class="blog_social_icon" href="{{blogData.blogger.Instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a class="blog_social_icon" href="{{blogData?.blogger.Facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a class="blog_social_icon" href="{{blogData?.blogger.Twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a class="blog_social_icon" href="{{blogData?.blogger.Instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@
 
       <div class="sayit_single_divider"></div>
       <!-- Post comment start -->
-      <div id="fb-comments" class="fb-comments" [attr.data-href]="fbCommentsDataUrl + '/' + blogData.NavUrlString + '/' + blogData.BlogId"
+      <div id="fb-comments" class="fb-comments" [attr.data-href]="fbCommentsDataUrl + '/' + blogData?.NavUrlString + '/' + blogData?.BlogId"
            data-numposts="5" data-width="1140" data-mobile="true" data-order-by="reverse_time"></div>
       <br /><br />
       <h5 class="sayit_post_title">You can also use our <button (click)="goToByScroll('respond')">Comment Form</button> instead.</h5>

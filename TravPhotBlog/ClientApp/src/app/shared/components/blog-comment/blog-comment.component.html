@@ -1,7 +1,7 @@
 <!-- Comments Area -->
 <div class="sayit_comments_cont">
   <div class="sayit_comments_wrapper">
-    <h5 class="sayit_comments_title">{{comments.length}} Comments on This Post</h5>
+    <h5 class="sayit_comments_title">{{comments?.length}} Comments on This Post</h5>
 
     <div class="sayit_comment_list">
       <div class="comment even" *ngFor="let comment of comments | parentId:0">

@@ -34,8 +34,8 @@ export class PostComponent implements OnInit, AfterViewInit {
   private keywords: string;
   private author: string;
 
-  constructor(private route: ActivatedRoute, private blogInfoService: BlogInfoService, private blogContentService: BlogContentService, private blogTagService: BlogTagService,
-    private seoService: SeoService, private imgService: ImageService) {
+  constructor(private route: ActivatedRoute, private blogInfoService: BlogInfoService, private blogContentService: BlogContentService,
+    private blogTagService: BlogTagService, private seoService: SeoService, private imgService: ImageService) {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.blogId = params.get('blogId');
     });
@@ -45,7 +45,7 @@ export class PostComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.blogInfoService.getBlogInfo(this.blogId).subscribe((res) => {
       this.blogData = res;
-      this.blogData.TitleImage = this.imgService.getImageUrl(this.blogData.TitleImage, "Post") + "?width=1920&height=1280";
+      this.blogData.TitleImage = this.imgService.getImageUrl(this.blogData.TitleImage, "Post").replace(/ /g, "%20") + "?width=1920&height=1280";
       //Page Title & SEO Stuff
       this.title = this.blogData.Title + ' - ' + Constants.SITE_TITLE;
       this.description = this.blogData.Title + ' ' + this.blogData.City + ' ' + this.blogData.Country + ' ' + this.blogData.Category;
@@ -85,7 +85,8 @@ export class PostComponent implements OnInit, AfterViewInit {
       });
       this.blogContentService.getRelatedPosts(this.blogData.BlogTagId).subscribe((res) => {
         this.relatedPosts = res;
-        this.relatedPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post") + "?width=1170&height=959");
+        this.relatedPosts.forEach(x => x.TitleImage = this.imgService.getImageUrl(x.TitleImage, "Post")
+          .replace(/ /g, "%20") + "?width=1170&height=959");
       });
       //Set Page Meta
       this.seoData = Object.assign(new SeoData(), {
